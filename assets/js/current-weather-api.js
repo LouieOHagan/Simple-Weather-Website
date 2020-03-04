@@ -22,6 +22,10 @@ function searchFunction(){
 function resultsFunction(weatherData) {
     weatherData = JSON.parse(weatherData);  // Parses incoming data (weatherData) into JS Object Format (JSON)
 
+    // Variable adding sunrise time and timezone unix values & converting them to timestamps
+    let sunrise = new Date((weatherData.sys.sunrise + weatherData.timezone) * 1000);
+    let sunset = new Date((weatherData.sys.sunset + weatherData.timezone) * 1000);
+    
     let output = "";
 
     output += `
@@ -29,11 +33,11 @@ function resultsFunction(weatherData) {
                     <h1>${weatherData.name}</h1>
                     <ul>
                         <li>Weather: ${weatherData.weather[0].main}</li>
-                        <li>Temperature: ${weatherData.main.temp}</li>
-                        <li>Sun Rise: ${weatherData.sys.sunrise}</li>
-                        <li>Sun Set: ${weatherData.sys.sunset}</li>
-                        <li>Humidity: ${weatherData.main.humidity}</li>
-                        <li>Wind Speed: ${weatherData.wind.speed}</li>
+                        <li>Temperature: ${Math.round(weatherData.main.temp)}&#8451;</li>
+                        <li>Sun Rise: ${sunrise}</li>
+                        <li>Sun Set: ${sunset}</li>
+                        <li>Humidity: ${weatherData.main.humidity}&#37;</li>
+                        <li>Wind Speed: ${(weatherData.wind.speed * 3.6).toFixed(1)} km/h</li>
                     </ul>
                 </div>
                 `;
