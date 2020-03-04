@@ -22,5 +22,21 @@ function searchFunction(){
 function resultsFunction(weatherData) {
     weatherData = JSON.parse(weatherData);  // Parses incoming data (weatherData) into JS Object Format (JSON)
 
-    document.getElementById("searchResults").innerHTML = `Weather: ${weatherData.weather[0].main}`;
+    let output = "";
+
+    output += `
+                <div class="weatherForecast">
+                    <h1>${weatherData.name}</h1>
+                    <ul>
+                        <li>Weather: ${weatherData.weather[0].main}</li>
+                        <li>Temperature: ${weatherData.main.temp}</li>
+                        <li>Sun Rise: ${weatherData.sys.sunrise}</li>
+                        <li>Sun Set: ${weatherData.sys.sunset}</li>
+                        <li>Humidity: ${weatherData.main.humidity}</li>
+                        <li>Wind Speed: ${weatherData.wind.speed}</li>
+                    </ul>
+                </div>
+                `;
+
+    document.getElementById("searchResults").innerHTML = output;
 }
