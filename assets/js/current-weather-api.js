@@ -22,11 +22,36 @@ function searchFunction(){
 }
 
 function resultsFunction(weatherData) {
-    weatherData = JSON.parse(weatherData);  // Parses incoming data (weatherData) into JS Object Format (JSON)
+    weatherData = JSON.parse(weatherData);  // Parses incoming data (weatherData) into JS Object Format (JSON) 
+    
+    let output = "";
 
+    output += `
+                <div class="weatherForecast">
+                    <h1>${weatherData.name}</h1>
+                    <ul>
+                        <li>Weather: ${weatherData.weather[0].main}</li>
+                        <li>Temperature: ${Math.round(weatherData.main.temp)}&#8451;</li>
+                        <li>Sun Rise: ${sunRiseTime(weatherData.sys.sunrise, weatherData.timezone)}</li>
+                        <li>Sun Set: ${sunSetTime(weatherData.sys.sunset, weatherData.timezone)}</li>
+                        <li>Humidity: ${weatherData.main.humidity}&#37;</li>
+                        <li>Wind Speed: ${msToKMH(weatherData.wind.speed)} km/h</li>
+                    </ul>
+                </div>
+                `;
+
+    document.getElementById("searchResults").innerHTML = output;
+}
+
+// Converts wind speed from m/s to km/h (* 3.6) & limits result to 1 decimal place.
+function msToKMH(wind) {
+    return  (wind * 3.6).toFixed(1);
+}
+
+function sunRiseTime(sunRiseValue, timezoneValue) {
     // Variable adding sunrise time and timezone unix values & converting them to timestamps
     // Converts value from seconds to milliseconds (* 1000)
-    let sunrise = new Date((weatherData.sys.sunrise + weatherData.timezone) * 1000);
+    let sunrise = new Date((sunRiseValue + timezoneValue) * 1000);
     let sunRiseHours = sunrise.getHours();          // Variable getting hours value from timestamp
     let sunRiseMinutes = sunrise.getMinutes();      // Variable getting minutes value from timestamp
 
@@ -40,9 +65,13 @@ function resultsFunction(weatherData) {
 
     let sunRiseTime = `${sunRiseHours}:${sunRiseMinutes}`;
 
+    return sunRiseTime;
+}
+
+function sunSetTime(sunSetValue, timezoneValue){
     // Variable adding sunset time and timezone unix values & converting them to timestamps
     // Converts value from seconds to milliseconds (* 1000)
-    let sunset = new Date((weatherData.sys.sunset + weatherData.timezone) * 1000);
+    let sunset = new Date((sunSetValue + timezoneValue) * 1000);
     let sunSetHours = sunset.getHours();            // Variable getting hours value from timestamp
     let sunSetMinutes = sunset.getMinutes();        // Variable getting minutes value from timestamp  
 
@@ -54,28 +83,7 @@ function resultsFunction(weatherData) {
         sunSetHours = `0${sunSetHours}`;
     }
 
-    let sunSetTime = `${sunSetHours}:${sunSetMinutes}`;  
-    
-    let output = "";
+    let sunSetTime = `${sunSetHours}:${sunSetMinutes}`;
 
-    output += `
-                <div class="weatherForecast">
-                    <h1>${weatherData.name}</h1>
-                    <ul>
-                        <li>Weather: ${weatherData.weather[0].main}</li>
-                        <li>Temperature: ${Math.round(weatherData.main.temp)}&#8451;</li>
-                        <li>Sun Rise: ${sunRiseTime}</li>
-                        <li>Sun Set: ${sunSetTime}</li>
-                        <li>Humidity: ${weatherData.main.humidity}&#37;</li>
-                        <li>Wind Speed: ${msToKMH(weatherData.wind.speed)} km/h</li>
-                    </ul>
-                </div>
-                `;
-
-    document.getElementById("searchResults").innerHTML = output;
-}
-
-// Converts wind speed from m/s to km/h (* 3.6) & limits result to 1 decimal place.
-function msToKMH(wind) {
-    return  (wind * 3.6).toFixed(1);
+    return sunSetTime;
 }
