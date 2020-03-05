@@ -13,7 +13,7 @@ function searchFunction(){
     xhr.onload = function() {
         if(this.readyState === 4 && this.status === 200){
             resultsFunction(xhr.responseText);
-        }
+        } 
     };
     
     xhr.send();                             // Sends request to server
@@ -24,7 +24,31 @@ function resultsFunction(weatherData) {
 
     // Variable adding sunrise time and timezone unix values & converting them to timestamps
     let sunrise = new Date((weatherData.sys.sunrise + weatherData.timezone) * 1000);
+    let sunRiseHours = sunrise.getHours();          // Variable getting hours value from timestamp
+    let sunRiseMinutes = sunrise.getMinutes();      // Variable getting minutes value from timestamp
+    let sunRiseTime;                                // declaring sun rise time variable to be called in if else statement
+
+    if (sunRiseHours < 10 && sunRiseMinutes < 10) {
+        sunRiseTime = `0${sunRiseHours}:0${sunRiseMinutes}`;
+    } else if (sunRiseHours < 10){
+        sunRiseTime = `0${sunRiseHours}:${sunRiseMinutes}`;
+    } else if (sunRiseMinutes < 10) {
+        sunRiseTime = `${sunRiseHours}:0${sunRiseMinutes}`;
+    } else {
+        sunRiseTime = `${sunRiseHours}:${sunRiseMinutes}`;
+    }
+
+    // Variable adding sunset time and timezone unix values & converting them to timestamps
     let sunset = new Date((weatherData.sys.sunset + weatherData.timezone) * 1000);
+    let sunSetHours = sunset.getHours();            // Variable getting hours value from timestamp
+    let sunSetMinutes = sunset.getMinutes();        // Variable getting minutes value from timestamp
+    let sunSetTime;                                 // declaring sun rise time variable to be called in if else statement
+
+    if(sunSetMinutes < 10){
+        sunSetTime = `${sunSetHours}:0${sunSetMinutes}`;
+    } else {
+        sunSetTime = `${sunSetHours}:${sunSetMinutes}`;
+    }
     
     let output = "";
 
@@ -34,8 +58,8 @@ function resultsFunction(weatherData) {
                     <ul>
                         <li>Weather: ${weatherData.weather[0].main}</li>
                         <li>Temperature: ${Math.round(weatherData.main.temp)}&#8451;</li>
-                        <li>Sun Rise: ${sunrise}</li>
-                        <li>Sun Set: ${sunset}</li>
+                        <li>Sun Rise: ${sunRiseTime}</li>
+                        <li>Sun Set: ${sunSetTime}</li>
                         <li>Humidity: ${weatherData.main.humidity}&#37;</li>
                         <li>Wind Speed: ${(weatherData.wind.speed * 3.6).toFixed(1)} km/h</li>
                     </ul>
@@ -44,3 +68,4 @@ function resultsFunction(weatherData) {
 
     document.getElementById("searchResults").innerHTML = output;
 }
+
