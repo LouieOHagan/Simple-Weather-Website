@@ -6,7 +6,7 @@ const apiKey2 = "&appid=308bcfc339b942ce47cc8a976f8c4728";
 
 function searchFunction2(){
     // Gets search box value and converts units to metric to be added to url
-    let userInput2 = document.getElementById("searchInput2").value;   
+    let userInput2 = document.getElementById("searchInput2").value + "&units=metric";   
     // Removes spaces from search box value and replaces with comma so link doesnt return 404.  
     userInput2 = userInput2.replace(/\s/g,',');
 
@@ -33,5 +33,27 @@ function searchFunction2(){
 function resultsFunction2(weatherData2) {
     weatherData2 = JSON.parse(weatherData2);
 
-    console.log(weatherData2);
+    //console.log(weatherData2);
+
+    let output2 = "";
+    let i;
+
+    for (i = 0; i < weatherData2.list.length; i++  ) {
+        
+        // output2 += `<p>Name = ${weatherData2.list[i].dt}</p>`;
+
+        output2 += `<div class="weatherForecast">
+                        <ul>
+                            <li>Time: ${weatherData2.list[i].dt_txt}</li>
+                            <li>Weather: ${weatherData2.list[i].weather[0].main}</li>
+                            <li>Temperature: ${Math.round(weatherData2.list[i].main.temp)}&#8451;</li>
+                            <li>Sun Rise: ${weatherData2.city.sunrise}</li>
+                            <li>Sun Set: ${weatherData2.city.sunset}</li>
+                            <li>Humidity: ${weatherData2.list[i].main.humidity}&#37;</li>
+                            <li>Wind Speed: ${weatherData2.list[i].wind.speed} km/h</li>
+                        </ul>
+                    </div>`
+    }
+
+    document.getElementById("searchResults2").innerHTML = output2;
 }
