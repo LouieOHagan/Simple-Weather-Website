@@ -13,7 +13,9 @@ function searchFunction(){
     xhr.onload = function() {
         if(this.readyState === 4 && this.status === 200){
             resultsFunction(xhr.responseText);
-        } 
+        } else if (this.status === 404){
+            alert("City not found");
+        }
     };
     
     xhr.send();                             // Sends request to server
@@ -65,7 +67,7 @@ function resultsFunction(weatherData) {
                         <li>Sun Rise: ${sunRiseTime}</li>
                         <li>Sun Set: ${sunSetTime}</li>
                         <li>Humidity: ${weatherData.main.humidity}&#37;</li>
-                        <li>Wind Speed: ${(weatherData.wind.speed * 3.6).toFixed(1)} km/h</li>
+                        <li>Wind Speed: ${msToKMH(weatherData.wind.speed)} km/h</li>
                     </ul>
                 </div>
                 `;
@@ -73,3 +75,7 @@ function resultsFunction(weatherData) {
     document.getElementById("searchResults").innerHTML = output;
 }
 
+// Converts wind speed from m/s to km/h (* 3.6) & limits result to 1 decimal place.
+function msToKMH(wind) {
+    return  (wind * 3.6).toFixed(1);
+}
