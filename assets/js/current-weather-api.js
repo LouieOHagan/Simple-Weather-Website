@@ -4,7 +4,8 @@ const apiKey = "&appid=308bcfc339b942ce47cc8a976f8c4728";
 
 function searchFunction(){
     // Gets search box value and converts units to metric to be added to url
-    let userInput = document.getElementById("searchInput").value + "&units=metric";     
+    let userInput = document.getElementById("searchInput").value + "&units=metric";   
+    // Removes spaces from search box value and replaces with comma so link doesnt return 404.  
     userInput = userInput.replace(/\s/g,',');
 
     let url = link + userInput + apiKey;    // adds endpoint, API Key and UserInput together to form link to be called
@@ -54,13 +55,14 @@ function msToKMH(wind) {
     return  (wind * 3.6).toFixed(1);
 }
 
+// Takes time that sun rises, converts to local timezone and returns the hours and minutes only.
 function sunRiseTime(sunRiseValue, timezoneValue) {
-    // Variable adding sunrise time and timezone unix values & converting them to timestamps
-    // Converts value from seconds to milliseconds (* 1000)
+    // Adds sun rise time & timezone unix values, converts to timestamps and converts seconds to milliseconds (* 1000)
     let sunrise = new Date((sunRiseValue + timezoneValue) * 1000);
     let sunRiseHours = sunrise.getHours();          // Variable getting hours value from timestamp
     let sunRiseMinutes = sunrise.getMinutes();      // Variable getting minutes value from timestamp
 
+    // adds 0 in front of any number below 10 as by default would appear 6:8 rather than 06:08
     if(sunRiseHours < 10){
         sunRiseHours = `0${sunRiseHours}`;
     }
@@ -74,13 +76,14 @@ function sunRiseTime(sunRiseValue, timezoneValue) {
     return sunRiseTime;
 }
 
+// Takes time that sun sets, converts to local timezone and returns the hours and minutes only.
 function sunSetTime(sunSetValue, timezoneValue){
-    // Variable adding sunset time and timezone unix values & converting them to timestamps
-    // Converts value from seconds to milliseconds (* 1000)
+    // Adds sun set time & timezone unix values, converts to timestamps and converts seconds to milliseconds (* 1000)
     let sunset = new Date((sunSetValue + timezoneValue) * 1000);
     let sunSetHours = sunset.getHours();            // Variable getting hours value from timestamp
     let sunSetMinutes = sunset.getMinutes();        // Variable getting minutes value from timestamp  
 
+    // adds 0 in front of any number below 10 as by default would appear 6:8 rather than 06:08
     if(sunSetMinutes < 10){
         sunSetMinutes = `0${sunSetMinutes}`;
     } 
