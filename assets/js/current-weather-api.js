@@ -5,6 +5,8 @@ const apiKey = "&appid=308bcfc339b942ce47cc8a976f8c4728";
 function searchFunction(){
     // Gets search box value and converts units to metric to be added to url
     let userInput = document.getElementById("searchInput").value + "&units=metric";     
+    userInput = userInput.replace(/\s/g,',');
+
     let url = link + userInput + apiKey;    // adds endpoint, API Key and UserInput together to form link to be called
 
     let xhr = new XMLHttpRequest();
@@ -14,7 +16,11 @@ function searchFunction(){
         if(this.readyState === 4 && this.status === 200){
             resultsFunction(xhr.responseText);
         } else if (this.status === 404){
-            alert("City not found");
+            document.getElementById("ifError").innerHTML = `
+                                                            <p style="font-size: 0.95rem;"><span style="color:red;">Error: Location Not Found</span> <br>
+                                                            Please ensure there is a comma inbetween any spaces you may have. <br>
+                                                            Think this is a mistake ? Let Us Know <a href="#" target="_blank">Here</a>!</p>
+                                                            `;
         }
     };
     
