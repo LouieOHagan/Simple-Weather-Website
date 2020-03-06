@@ -47,6 +47,7 @@ function resultsFunction2(weatherData2) {
                         <ul>
                             <li>Time: ${weatherData2.list[i].dt_txt}</li>
                             <li>Weather: ${weatherData2.list[i].weather[0].main}</li>
+                            <li>Rain: ${ifRaining(weatherData2.list[i].rain)}</li>
                             <li>Temperature: ${Math.round(weatherData2.list[i].main.temp)}&#8451;</li>
                             <li>Humidity: ${weatherData2.list[i].main.humidity}&#37;</li>
                             <li>Wind Speed: ${msToKMH(weatherData2.list[i].wind.speed)} km/h</li>
@@ -60,4 +61,21 @@ function resultsFunction2(weatherData2) {
 // Converts wind speed from m/s to km/h (* 3.6) & limits result to 1 decimal place.
 function msToKMH(wind) {
     return  (wind * 3.6).toFixed(1);
+}
+
+function ifRaining(rain){
+    if(rain !== undefined){
+        if(rain["1h"] !== undefined) {
+            console.log("Rain 1h");
+            return rain["1h"] + "mm"; 
+        } 
+        
+        if (rain["3h"] !== undefined) {
+            console.log("Rain 3h");
+            return rain["3h"] + "mm"; 
+        }
+    } else{
+        console.log("no rain");
+        return "0 mm";
+    }
 }

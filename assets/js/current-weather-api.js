@@ -39,6 +39,7 @@ function resultsFunction(weatherData) {
                     <ul>
                         <li>Weather: ${weatherData.weather[0].main}</li>
                         <li>Temperature: ${Math.round(weatherData.main.temp)}&#8451;</li>
+                        <li>Rain: ${ifRaining(weatherData.rain)}</li>
                         <li>Sun Rise: ${sunRiseTime(weatherData.sys.sunrise, weatherData.timezone)}</li>
                         <li>Sun Set: ${sunSetTime(weatherData.sys.sunset, weatherData.timezone)}</li>
                         <li>Humidity: ${weatherData.main.humidity}&#37;</li>
@@ -95,4 +96,21 @@ function sunSetTime(sunSetValue, timezoneValue){
     let sunSetTime = `${sunSetHours}:${sunSetMinutes}`;
 
     return sunSetTime;
+}
+
+function ifRaining(rain){
+    if(rain !== undefined){
+        if(rain["1h"] !== undefined) {
+            console.log("Rain 1h");
+            return rain["1h"] + "mm"; 
+        } 
+        
+        if (rain["3h"] !== undefined) {
+            console.log("Rain 3h");
+            return rain["3h"] + "mm"; 
+        }
+    } else{
+        console.log("no rain");
+        return "0 mm";
+    }
 }
