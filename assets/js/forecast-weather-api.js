@@ -33,27 +33,31 @@ function searchFunction2(){
 function resultsFunction2(weatherData2) {
     weatherData2 = JSON.parse(weatherData2);
 
-    //console.log(weatherData2);
-
     let output2 = "";
     let i;
+    output2 += `
+                <div class="weatherForecast">
+                    <h1>${weatherData2.city.name}</h1>
+                `;
 
     for (i = 0; i < weatherData2.list.length; i++  ) {
-        
-        // output2 += `<p>Name = ${weatherData2.list[i].dt}</p>`;
 
-        output2 += `<div class="weatherForecast">
+        output2 += ` 
+                        <p>Day ${[i]}</p>
                         <ul>
                             <li>Time: ${weatherData2.list[i].dt_txt}</li>
                             <li>Weather: ${weatherData2.list[i].weather[0].main}</li>
                             <li>Temperature: ${Math.round(weatherData2.list[i].main.temp)}&#8451;</li>
-                            <li>Sun Rise: ${weatherData2.city.sunrise}</li>
-                            <li>Sun Set: ${weatherData2.city.sunset}</li>
                             <li>Humidity: ${weatherData2.list[i].main.humidity}&#37;</li>
-                            <li>Wind Speed: ${weatherData2.list[i].wind.speed} km/h</li>
+                            <li>Wind Speed: ${msToKMH(weatherData2.list[i].wind.speed)} km/h</li>
                         </ul>
-                    </div>`
+                    </div>`;
     }
 
     document.getElementById("searchResults2").innerHTML = output2;
+}
+
+// Converts wind speed from m/s to km/h (* 3.6) & limits result to 1 decimal place.
+function msToKMH(wind) {
+    return  (wind * 3.6).toFixed(1);
 }
