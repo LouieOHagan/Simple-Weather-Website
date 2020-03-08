@@ -10,13 +10,11 @@ function searchFunction(link, setFunction){
 
     let url = link + userInput + apiKey;    // adds endpoint, API Key and UserInput together to form link to be called
 
-    console.log("Search function called");
     let xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);             // Initializes request (request = xhr variable)
     
     xhr.onload = function() {
         if(this.readyState === 4 && this.status === 200){
-            console.log("1234");
             setFunction(xhr.responseText);
         } else if (this.status === 404 || this.status === 400){
             document.getElementById("ifError").innerHTML = `
@@ -31,40 +29,113 @@ function searchFunction(link, setFunction){
 }
 
 function currentWeatherResults(weatherData) {
-    weatherData = JSON.parse(weatherData);
-    console.log("Current Weather results function called");
-    console.log(weatherData);
+    weatherData = JSON.parse(weatherData);  // Parses incoming data (weatherData) into JS Object Format (JSON) 
+    
     let output = "";
 
-    output += `<p>${weatherData.wind.speed}</p>`;
+    output += `
+                <div class="weatherForecast">
+                    <h1>${weatherData.name}</h1>
+                    <ul>
+                        <li>Weather: ${weatherData.weather[0].main}</li>
+                        <li>Temperature: ${Math.round(weatherData.main.temp)}&#8451;</li>
+                        <li>Precipitation: ${ifRaining(weatherData.rain)}</li>
+                        <li>Sun Rise: ${sunRiseTime(weatherData.sys.sunrise, weatherData.timezone)}</li>
+                        <li>Sun Set: ${sunSetTime(weatherData.sys.sunset, weatherData.timezone)}</li>
+                        <li>Humidity: ${weatherData.main.humidity}&#37;</li>
+                        <li>Wind Speed: ${msToKMH(weatherData.wind.speed)} km/h</li>
+                    </ul>
+                </div>
+                `;
 
     document.getElementById("currentResult").innerHTML = output;
 }
 
 function forecastResults(forecastData) {
     forecastData = JSON.parse(forecastData);
-    console.log("5 day forecast results function called");
-    console.log(forecastData);
 
-    let output2 = "";
+    let forecastOutput = "";
     let i;
-    output2 += `
+    forecastOutput += `
                 <div class="weatherForecast">
                     <h1>${forecastData.city.name}</h1>
                 `;
 
     for (i = 0; i < forecastData.list.length; i++  ) {
 
-        output2 += ` 
+        forecastOutput += ` 
                         <p>Day ${[i]}</p>
                         <ul>
                             <li>Time: ${forecastData.list[i].dt_txt}</li>
                             <li>Weather: ${forecastData.list[i].weather[0].main}</li>
+                            <li>Precipitation: ${ifRaining(forecastData.list[i].rain)}</li>
                             <li>Temperature: ${Math.round(forecastData.list[i].main.temp)}&#8451;</li>
                             <li>Humidity: ${forecastData.list[i].main.humidity}&#37;</li>
+                            <li>Wind Speed: ${msToKMH(forecastData.list[i].wind.speed)} km/h</li>
                         </ul>
                     </div>`;
     }
 
-    document.getElementById("forecastResult").innerHTML = output2;
+    document.getElementById("forecastResult").innerHTML = forecastOutput;
+}
+
+// Converts wind speed from m/s to km/h (* 3.6) & limits result to 1 decimal place.
+function msToKMH(wind) {
+    return  (wind * 3.6).toFixed(1);
+}
+
+// Takes time that sun rises, converts to local timezone and returns the hours and minutes only.
+function sunRiseTime(sunRiseValue, timezoneValue) {
+    // Adds sun rise time & timezone unix values, converts to timestamps and converts seconds to milliseconds (* 1000)
+    let sunrise = new Date((sunRiseValue + timezoneValue) * 1000);
+    let sunRiseHours = sunrise.getHours();          // Variable getting hours value from timestamp
+    let sunRiseMinutes = sunrise.getMinutes();      // Variable getting minutes value from timestamp
+
+    // adds 0 in front of any number below 10 as by default would appear 6:8 rather than 06:08
+    if(sunRiseHours < 10){
+        sunRiseHours = `0${sunRiseHours}`;
+    }
+
+    if(sunRiseMinutes < 10){
+        sunRiseMinutes = `0${sunRiseMinutes}`;
+    }
+
+    let sunRiseTime = `${sunRiseHours}:${sunRiseMinutes}`;
+
+    return sunRiseTime;
+}
+
+// Takes time that sun sets, converts to local timezone and returns the hours and minutes only.
+function sunSetTime(sunSetValue, timezoneValue){
+    // Adds sun set time & timezone unix values, converts to timestamps and converts seconds to milliseconds (* 1000)
+    let sunset = new Date((sunSetValue + timezoneValue) * 1000);
+    let sunSetHours = sunset.getHours();            // Variable getting hours value from timestamp
+    let sunSetMinutes = sunset.getMinutes();        // Variable getting minutes value from timestamp  
+
+    // adds 0 in front of any number below 10 as by default would appear 6:8 rather than 06:08
+    if(sunSetMinutes < 10){
+        sunSetMinutes = `0${sunSetMinutes}`;
+    } 
+
+    if(sunSetHours < 10){
+        sunSetHours = `0${sunSetHours}`;
+    }
+
+    let sunSetTime = `${sunSetHours}:${sunSetMinutes}`;
+
+    return sunSetTime;
+}
+
+function ifRaining(rain){
+    if(rain !== undefined){
+        if(rain["1h"] !== undefined) {
+            return rain["1h"] + "mm"; 
+        } 
+        
+        if (rain["3h"] !== undefined) {
+            return rain["3h"] + "mm"; 
+        }
+    } else{
+        return "0 mm";
+    }
 }
