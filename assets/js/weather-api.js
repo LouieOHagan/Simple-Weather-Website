@@ -25,7 +25,7 @@ function searchFunction(link, setFunction){
         } else if (this.status === 404){
             document.getElementById("ifError").innerHTML = `
                                                             <p style="font-size: 0.95rem;"><span style="color:red;">Error: Location Not Found</span> <br>
-                                                            Please ensure there is a comma inbetween any spaces you may have. <br>
+                                                            Please ensure correct spelling of desired location. <br>
                                                             Think this is a mistake ? Let Us Know <a href="#" target="_blank">Here</a>!</p>
                                                             `;
         }
