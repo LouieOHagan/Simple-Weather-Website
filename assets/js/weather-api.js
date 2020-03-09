@@ -4,19 +4,25 @@ const apiKey = "&appid=308bcfc339b942ce47cc8a976f8c4728";
 
 function searchFunction(link, setFunction){
     // Gets search box value and converts units to metric to be added to url
-    let userInput = document.getElementById("searchInput").value + "&units=metric";   
+    let userInput = document.getElementById("searchInput").value; // + "&units=metric";   
     // Removes spaces from search box value and replaces with comma so link doesnt return 404.  
     userInput = userInput.replace(/\s/g,',');
+    // If userInput box is empty and user tries to search, returns error asking to enter city name
+    if(!userInput){
+        document.getElementById("ifError").innerHTML = `<h1>Please enter valid city name...</h1>`;
+        return;
+    }
+    let units = "&units=metric";
 
-    let url = link + userInput + apiKey;    // adds endpoint, API Key and UserInput together to form link to be called
+    let url = link + userInput + units + apiKey;    // adds endpoint, API Key and UserInput together to form url to be called
 
     let xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);             // Initializes request (request = xhr variable)
-    
+
     xhr.onload = function() {
         if(this.readyState === 4 && this.status === 200){
             setFunction(xhr.responseText);
-        } else if (this.status === 404 || this.status === 400){
+        } else if (this.status === 404){
             document.getElementById("ifError").innerHTML = `
                                                             <p style="font-size: 0.95rem;"><span style="color:red;">Error: Location Not Found</span> <br>
                                                             Please ensure there is a comma inbetween any spaces you may have. <br>
@@ -28,6 +34,7 @@ function searchFunction(link, setFunction){
     xhr.send();                             // Sends request to server
 }
 
+// Recieves Data from searchFunction for current weather in specified location
 function currentWeatherResults(weatherData) {
     weatherData = JSON.parse(weatherData);  // Parses incoming data (weatherData) into JS Object Format (JSON) 
     
@@ -51,8 +58,9 @@ function currentWeatherResults(weatherData) {
     document.getElementById("currentResult").innerHTML = output;
 }
 
+// Recieves data from searchFunction for 5 day weather forecast with 3 hour intervals in specified location
 function forecastResults(forecastData) {
-    forecastData = JSON.parse(forecastData);
+    forecastData = JSON.parse(forecastData);    // Parses incoming data (forecastData) into JS Object Format (JSON) 
 
     let forecastOutput = "";
     let i;
@@ -126,8 +134,10 @@ function sunSetTime(sunSetValue, timezoneValue){
     return sunSetTime;
 }
 
+// Checks if rain parameters is defined as API only displays calculated data (not raining = no rain parameter in API Response)
 function ifRaining(rain){
     if(rain !== undefined){
+        // 1h & 3h wrapped in square brackets as parameter begins with number and was throwing errors without square brackets.
         if(rain["1h"] !== undefined) {
             return rain["1h"] + "mm"; 
         } 
@@ -135,6 +145,7 @@ function ifRaining(rain){
         if (rain["3h"] !== undefined) {
             return rain["3h"] + "mm"; 
         }
+    // If not raining and rain parameter is undefined, returns 0mm precipitation
     } else{
         return "0 mm";
     }
