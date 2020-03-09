@@ -17,10 +17,10 @@ function searchFunction(link, setFunction){
     let url = link + userInput + units + apiKey;    // adds endpoint, API Key and UserInput together to form url to be called
 
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);             // Initializes request (request = xhr variable)
+    xhr.open("GET", url, true);                     // Initializes request (request = xhr variable)
 
     xhr.onload = function() {
-        if(this.readyState === 4 && this.status === 200){
+        if(this.status === 200){                    // Only checks if status = 200 as onload only runs if readyState = 4 already
             setFunction(xhr.responseText);
         } else if (this.status === 404){
             document.getElementById("ifError").innerHTML = `
