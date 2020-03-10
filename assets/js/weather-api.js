@@ -4,12 +4,14 @@ const apiKey = "&appid=308bcfc339b942ce47cc8a976f8c4728";
 
 function searchFunction(link, setFunction){
     // Gets search box value and converts units to metric to be added to url
-    let userInput = document.getElementById("searchInput").value; // + "&units=metric";   
+    let userInput = document.getElementById("searchInput").value;  
     // Removes spaces from search box value and replaces with comma so link doesnt return 404.  
     userInput = userInput.replace(/\s/g,',');
     // If userInput box is empty and user tries to search, returns error asking to enter city name
     if(!userInput){
         document.getElementById("ifError").innerHTML = `<h1>Please enter valid city name...</h1>`;
+        document.getElementById("currentResult").innerHTML = '';
+        document.getElementById("forecastResult").innerHTML = '';
         return;
     }
     let units = "&units=metric";
@@ -21,6 +23,7 @@ function searchFunction(link, setFunction){
 
     xhr.onload = function() {
         if(this.status === 200){                    // Only checks if status = 200 as onload only runs if readyState = 4 already
+            document.getElementById("ifError").innerHTML = '';
             setFunction(xhr.responseText);
         } else if (this.status === 404){
             document.getElementById("ifError").innerHTML = `
@@ -28,6 +31,8 @@ function searchFunction(link, setFunction){
                                                             Please ensure correct spelling of desired location. <br>
                                                             Think this is a mistake ? Let Us Know <a href="#" target="_blank">Here</a>!</p>
                                                             `;
+            document.getElementById("currentResult").innerHTML = '';
+            document.getElementById("forecastResult").innerHTML = '';
         }
     };
     
@@ -45,10 +50,10 @@ function currentWeatherResults(weatherData) {
                     <h1>${weatherData.name}</h1>
                     <ul>
                         <li>Weather: ${weatherData.weather[0].main}</li>
-                        <li>Temperature: ${Math.round(weatherData.main.temp)}&#8451;</li>
-                        <li>Precipitation: ${ifRaining(weatherData.rain)}</li>
                         <li>Sun Rise: ${sunRiseTime(weatherData.sys.sunrise, weatherData.timezone)}</li>
                         <li>Sun Set: ${sunSetTime(weatherData.sys.sunset, weatherData.timezone)}</li>
+                        <li>Temperature: ${Math.round(weatherData.main.temp)}&#8451;</li>
+                        <li>Precipitation: ${ifRaining(weatherData.rain)}</li>
                         <li>Humidity: ${weatherData.main.humidity}&#37;</li>
                         <li>Wind Speed: ${msToKMH(weatherData.wind.speed)} km/h</li>
                     </ul>
@@ -74,10 +79,10 @@ function forecastResults(forecastData) {
         forecastOutput += ` 
                         <p>Day ${[i]}</p>
                         <ul>
-                            <li>Time: ${forecastData.list[i].dt_txt}</li>
+                            <li>Time: ${forecastDay(forecastData.list[i].dt_txt)}</li>
                             <li>Weather: ${forecastData.list[i].weather[0].main}</li>
-                            <li>Precipitation: ${ifRaining(forecastData.list[i].rain)}</li>
                             <li>Temperature: ${Math.round(forecastData.list[i].main.temp)}&#8451;</li>
+                            <li>Precipitation: ${ifRaining(forecastData.list[i].rain)}</li>
                             <li>Humidity: ${forecastData.list[i].main.humidity}&#37;</li>
                             <li>Wind Speed: ${msToKMH(forecastData.list[i].wind.speed)} km/h</li>
                         </ul>
@@ -86,6 +91,25 @@ function forecastResults(forecastData) {
 
     document.getElementById("forecastResult").innerHTML = forecastOutput;
 }
+
+// Gets every 3 hours time [for next 5 days] from forecastResults function and changes to display "Day of Week & Time"
+function forecastDay(timestamp){
+    weekDay = new Date(timestamp);
+    // Code from W3Schools to name each day instead of returning number of day in week - https://www.w3schools.com/jsref/jsref_getday.asp
+    var day = new Array(7);
+    day[0] = "Sun"; day[1] = "Mon"; day[2] = "Tue"; day[3] = "Wed"; day[4] = "Thu"; day[5] = "Fri"; day[6] = "Sat";
+    var weekDayName = day[weekDay.getDay()];
+
+    // Variable getting hours value from timestamp
+    dayTime = weekDay.getHours();
+    // adds 0 in front of any number below 10 as by default would appear 6:8 rather than 06:08
+    if(dayTime < 10){
+        dayTime = `0${dayTime}`;
+    }
+
+    return `${weekDayName} ${dayTime}:00`;
+}
+
 
 // Converts wind speed from m/s to km/h (* 3.6) & limits result to 1 decimal place.
 function msToKMH(wind) {
