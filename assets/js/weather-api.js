@@ -94,14 +94,14 @@ function forecastResults(forecastData) {
 
 // Gets every 3 hours time [for next 5 days] from forecastResults function and changes to display "Day of Week & Time"
 function forecastDay(timestamp){
-    weekDay = new Date(timestamp);
+    let weekDay = new Date(timestamp);
     // Code from W3Schools to name each day instead of returning number of day in week - https://www.w3schools.com/jsref/jsref_getday.asp
-    var day = new Array(7);
+    let day = new Array(7);
     day[0] = "Sun"; day[1] = "Mon"; day[2] = "Tue"; day[3] = "Wed"; day[4] = "Thu"; day[5] = "Fri"; day[6] = "Sat";
-    var weekDayName = day[weekDay.getDay()];
+    let weekDayName = day[weekDay.getDay()];
 
     // Variable getting hours value from timestamp
-    dayTime = weekDay.getHours();
+    let dayTime = weekDay.getHours();
     // adds 0 in front of any number below 10 as by default would appear 6:8 rather than 06:08
     if(dayTime < 10){
         dayTime = `0${dayTime}`;

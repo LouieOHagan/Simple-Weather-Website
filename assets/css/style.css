@@ -1,0 +1,27 @@
+/* --------------------------Special Padding/Margin */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------Home Page */
+
+.home-image{
+    height: 85vh;
+    background: url(../images/landing-image.jpg) no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.hero-text{
+    height: 85vh;
+    line-height: 85vh;
+    text-align: center;
+}
+
+.hero-text img{
+    height: 11rem;
+}
