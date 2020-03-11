@@ -28,11 +28,11 @@ function searchFunction(link, setFunction){
             document.getElementById("searchInput").classList.remove("ifErrorBorder");
             setFunction(xhr.responseText);
         } else if (this.status === 404){
-            document.getElementById("ifError").innerHTML = `
-                                                            <p style="font-size: 0.95rem;"><span style="color:red;">Error: Location Not Found</span> <br>
-                                                            Please ensure correct spelling of desired location. <br>
-                                                            Think this is a mistake ? Let Us Know <a href="#" target="_blank">Here</a>!</p>
+            document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Location Not Found... Please ensure the correct spelling of your desired location. <br> 
+                                                                <span class="mistake">Think this is a mistake ? Let Us Know <a href="#" target="_blank">Here!</a></span>
+                                                            </p>
                                                             `;
+            document.getElementById("searchInput").classList.add("ifErrorBorder");
             document.getElementById("currentResult").innerHTML = '';
             document.getElementById("forecastResult").innerHTML = '';
         }
@@ -49,7 +49,7 @@ function currentWeatherResults(weatherData) {
 
     output += `
                 <div class="weatherForecast">
-                    <h1>${weatherData.name}</h1>
+                    <h1>${weatherData.name}, ${weatherData.sys.country}</h1>
                     <ul>
                         <li>Weather: ${weatherData.weather[0].main}</li>
                         <li>Sun Rise: ${sunRiseTime(weatherData.sys.sunrise, weatherData.timezone)}</li>

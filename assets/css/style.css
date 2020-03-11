@@ -59,7 +59,20 @@
 
 .emptyTextError{
     color: red;
-    padding: 0.35rem 0 0 2.5rem;
+    padding: 0.15rem 0 0 2.5rem;
+}
+
+.emptyTextError .mistake{
+    color: rgb(255, 150, 29);
+}
+
+.emptyTextError .mistake a{
+    color: rgb(255, 150, 29);
+    text-decoration: underline;
+}
+
+.emptyTextError .mistake a:hover{
+    color: rgb(250, 122, 18);
 }
 
 .ifErrorBorder{
