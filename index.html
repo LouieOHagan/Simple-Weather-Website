@@ -11,32 +11,84 @@
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 hero-image hero-text">
-            <img src="./assets/images/landing-image-text.png" alt="Text" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-8 search-area">
-
-            <div class="row">
-                <div class="col-12 search-box">
-                    <input id="searchInput" class="search-bar" type="text" placeholder="Enter Location Name">
-                    <button id="searchButton" class="search-btn"><i class="fas fa-search"></i></button>
-                </div>
+<div class="container-fluid background">
+    <section class="landing-section">
+        <div class="row">
+            <div class="col-12 hero-image hero-text">
+                <img src="./assets/images/landing-image-text.png" alt="Text" />
             </div>
-
-            <div class="row">
-                <div class="col-12" id="ifError">
-                    
-                </div>
-            </div>
-
         </div>
-    </div>
+        <div class="row">
+            <div class="col-8 search-area">
 
+                <div class="row">
+                    <div class="col-12 search-box">
+                        
+                        <input id="searchInput" class="search-bar" type="text" placeholder="Enter Location Name">
+                        <button id="searchButton" class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
 
+                <div class="row">
+                    <div class="col-12" id="ifError">
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="main-section">
+        <div class="row">
+            <div class="col-8 currentWeatherCard">
+
+                <div class="row location">
+                    <div class="col col-12">
+                        <h2>Dublin, IE</h2>
+                    </div>
+                </div>
+
+                <div class="row weatherMain">
+                <!-- Weather Icon-->
+                    <div class="col col-6">
+                        
+                    </div>
+                <!-- Temperature and Weather Description-->
+                    <div class="col col-6">
+                        <h2>15&#8451;</h2>
+                    </div>
+                </div>
+
+                <div class="row sunTimes">
+                <!-- Sun Rise Icon and Time-->
+                    <div class="col col-5">
+                        <h2><i class="far fa-sun"></i>06:25</h2>
+                    </div>
+                <!-- Sun Set Icon and Time-->
+                    <div class="col col-5">
+                        <h2><i class="fas fa-sun"></i>17:56</h2>
+                    </div>
+                </div>
+
+                <div class="row weatherForecast">
+                <!-- Wind Icon and Speed-->
+                    <div class="col col-4">
+                        <h2><i class="fas fa-wind"></i>35 <span class="unit">km/h</span></h2>
+                    </div>
+                <!-- Humidity Icon and Humidity-->
+                    <div class="col col-4">
+                        <h2><i class="fas fa-tint"></i>67<span class="unit">&#37;</span></h2>
+                    </div>
+                <!-- Rain Icon and Precipitation-->
+                    <div class="col col-4">
+                        <h2><i class="fas fa-cloud-showers-heavy"></i>0<span class="unit">mm</span></h2>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 </div>
 
 

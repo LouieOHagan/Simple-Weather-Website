@@ -1,12 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,700&display=swap');
+
 /* --------------------------Special Padding/Margin */
 
 * {
     margin: 0;
     padding: 0;
     outline: none;
+    font-family: 'Raleway', sans-serif;
 }
 
-/* --------------------------Home Page */
+/* --------------------------Colours */
+
+.background{
+    background: lightgrey;
+}
+
+/* --------------------------Home Page - Landing Section */
 
 .hero-image{
     height: 85vh;
@@ -57,6 +66,8 @@
     border: 0.0625rem solid darkgray;
 }
 
+/* -------------Search bar errors classes - triggered by Javascript in weather-api.js*/
+
 .emptyTextError{
     color: red;
     padding: 0.15rem 0 0 2.5rem;
@@ -77,4 +88,72 @@
 
 .ifErrorBorder{
     border: 1px solid red;
+}
+
+/* --------------------------Home Page - Main Section */
+
+.main-section{
+    height: 100vh;
+    position: relative;
+}
+
+.currentWeatherCard{
+    margin: 0 auto;
+    height: 45rem;
+    background: white;
+    border: 1px black solid;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80rem;
+}
+
+.currentWeatherCard .col{
+    margin: auto;
+}
+
+.location {
+    height: 10rem;
+    background: red;
+}
+
+.location h2{
+    color: black;
+    font-size: 65px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+.weatherMain {
+    height: 15rem;
+    background: yellow;
+}
+
+.sunTimes {
+    height: 10rem;
+    background: green;
+}
+.weatherForecast {
+    height: 10rem;
+    background: rgb(42, 180, 226);
+}
+
+.weatherForecast h2,
+.sunTimes h2{
+    text-align: center;
+    color: black;
+}
+
+.currentWeatherCard i {
+    display: block;
+    font-size: 40px;
+    color: black;
+    padding: 10px 0;
+}
+
+.currentWeatherCard span{
+    font-size: 20px;
 }
