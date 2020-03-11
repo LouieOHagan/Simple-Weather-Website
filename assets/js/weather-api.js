@@ -9,7 +9,8 @@ function searchFunction(link, setFunction){
     userInput = userInput.replace(/\s/g,',');
     // If userInput box is empty and user tries to search, returns error asking to enter city name
     if(!userInput){
-        document.getElementById("ifError").innerHTML = `<h1>Please enter valid city name...</h1>`;
+        document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Please Enter Valid City Name...</p>`;
+        document.getElementById("searchInput").classList.add("ifErrorBorder");
         document.getElementById("currentResult").innerHTML = '';
         document.getElementById("forecastResult").innerHTML = '';
         return;
@@ -24,6 +25,7 @@ function searchFunction(link, setFunction){
     xhr.onload = function() {
         if(this.status === 200){                    // Only checks if status = 200 as onload only runs if readyState = 4 already
             document.getElementById("ifError").innerHTML = '';
+            document.getElementById("searchInput").classList.remove("ifErrorBorder");
             setFunction(xhr.responseText);
         } else if (this.status === 404){
             document.getElementById("ifError").innerHTML = `

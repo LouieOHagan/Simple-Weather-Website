@@ -1,13 +1,14 @@
 /* --------------------------Special Padding/Margin */
 
-body {
+* {
     margin: 0;
     padding: 0;
+    outline: none;
 }
 
 /* --------------------------Home Page */
 
-.home-image{
+.hero-image{
     height: 85vh;
     background: url(../images/landing-image.jpg) no-repeat center;
     -webkit-background-size: cover;
@@ -24,4 +25,43 @@ body {
 
 .hero-text img{
     height: 11rem;
+}
+
+.search-area{
+    background: rgba(0, 0, 0, 0.98);
+    margin: auto;
+    margin-top: -4.5625rem;
+    height: 9.125rem;
+    border-radius: 0.625rem;
+}
+
+.search-box{
+    padding: 3rem 2.5rem 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.search-bar{
+    width: 85%;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.3125rem;
+    border:  0.0625rem solid #fff;
+    background: transparent;
+    color: white;    
+}
+
+.search-btn{
+    background: #ffec00;
+    width: 10%; 
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid darkgray;
+}
+
+.emptyTextError{
+    color: red;
+    padding: 0.35rem 0 0 2.5rem;
+}
+
+.ifErrorBorder{
+    border: 1px solid red;
 }

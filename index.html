@@ -7,22 +7,43 @@
     <title>Home Page</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 home-image hero-text">
+        <div class="col-12 hero-image hero-text">
             <img src="./assets/images/landing-image-text.png" alt="Text" />
         </div>
     </div>
+    <div class="row">
+        <div class="col-8 search-area">
+
+            <div class="row">
+                <div class="col-12 search-box">
+                    <input id="searchInput" class="search-bar" type="text" placeholder="Enter Location Name">
+                    <button id="searchButton" class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8" id="ifError">
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
 </div>
 
 
-<input type="text" id="searchInput" placeholder="Enter City Name">
+<!-- <input type="text" id="searchInput" placeholder="Enter City Name">
 <button id="searchButton">Search</button>
-<p style="font-size: 0.8rem;">Format: City Name, State (Optional), <a href="https://www.iban.com/country-codes" target="_blank">Country Code</a> (Optional)</p>
-<div id="ifError"></div>
+<p style="font-size: 0.8rem;">Format: City Name, State (Optional), <a href="https://www.iban.com/country-codes" target="_blank">Country Code</a> (Optional)</p> -->
+<!-- <div id="ifError"></div> -->
 
 <div id="loader"></div>
 
