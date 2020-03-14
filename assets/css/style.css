@@ -37,11 +37,12 @@
 }
 
 .search-area{
-    background: rgba(0, 0, 0, 0.98);
+    background: #bc7860f7;
     margin: auto;
     margin-top: -4.5625rem;
     height: 9.125rem;
     border-radius: 0.625rem;
+    border: 0.1rem solid #fff;
 }
 
 .search-box{
@@ -54,16 +55,34 @@
     width: 85%;
     padding: 0.625rem 1.25rem;
     border-radius: 0.3125rem;
-    border:  0.0625rem solid #fff;
+    border:  0.1rem solid #fff;
     background: transparent;
     color: white;    
 }
 
+.search-bar:focus {
+    box-shadow: -1px 0px 14px 0.5px #32bbec
+}
+
+.search-bar::placeholder{
+    color: #fff;
+}
+
 .search-btn{
-    background: #ffec00;
+    background: #60a3bc;
     width: 10%; 
     border-radius: 0.3125rem;
-    border: 0.0625rem solid darkgray;
+    border: 0.1rem solid #fff;
+}
+
+.search-btn:hover {
+    transition: all .4s ease-in-out;
+    background: #3284a2; 
+    transform: scale(1.05);
+}
+
+.search-btn i {
+    color: #fff;
 }
 
 /* -------------Search bar errors classes - triggered by Javascript in weather-api.js*/
@@ -71,19 +90,22 @@
 .emptyTextError{
     color: red;
     padding: 0.15rem 0 0 2.5rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serf
 }
 
 .emptyTextError .mistake{
-    color: rgb(255, 150, 29);
+    color: rgb(251, 255, 0);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serf
 }
 
 .emptyTextError .mistake a{
-    color: rgb(255, 150, 29);
+    color: rgb(251, 255, 0);
     text-decoration: underline;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serf
 }
 
 .emptyTextError .mistake a:hover{
-    color: rgb(250, 122, 18);
+    color: rgb(255, 217, 0);
 }
 
 .ifErrorBorder{
@@ -94,7 +116,6 @@
 
 .main-section{
     height: 100vh;
-    position: relative;
 }
 
 .currentWeatherCard{
@@ -103,11 +124,8 @@
     background: white;
     border: 1px black solid;
     border-radius: 5px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     width: 80rem;
+    margin-top: 6rem;
 }
 
 .currentWeatherCard .col{
@@ -136,12 +154,12 @@
     height: 10rem;
     background: green;
 }
-.weatherForecast {
+.weatherForecasts {
     height: 10rem;
     background: rgb(42, 180, 226);
 }
 
-.weatherForecast h2,
+.weatherForecasts h2,
 .sunTimes h2{
     text-align: center;
     color: black;
@@ -152,6 +170,12 @@
     font-size: 40px;
     color: black;
     padding: 10px 0;
+}
+
+.currentWeatherCard img{
+    height: 60px;
+    display: block;
+    margin: auto;
 }
 
 .currentWeatherCard span{
