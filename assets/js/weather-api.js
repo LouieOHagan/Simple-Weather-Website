@@ -47,22 +47,58 @@ function currentWeatherResults(weatherData) {
     
     let output = "";
 
-    output += `
-                <div class="weatherForecast">
-                    <h1>${weatherData.name}, ${weatherData.sys.country}</h1>
-                    <ul>
-                        <li>Weather: ${weatherData.weather[0].main}</li>
-                        <li>Sun Rise: ${sunRiseTime(weatherData.sys.sunrise, weatherData.timezone)}</li>
-                        <li>Sun Set: ${sunSetTime(weatherData.sys.sunset, weatherData.timezone)}</li>
-                        <li>Temperature: ${Math.round(weatherData.main.temp)}&#8451;</li>
-                        <li>Precipitation: ${ifRaining(weatherData.rain)}</li>
-                        <li>Humidity: ${weatherData.main.humidity}&#37;</li>
-                        <li>Wind Speed: ${msToKMH(weatherData.wind.speed)} km/h</li>
-                    </ul>
-                </div>
-                `;
+    output += `<div class="row">
+            <div class="col-8 currentWeatherCard">
 
-    document.getElementById("currentResult").innerHTML = output;
+                <div class="row location">
+                    <div class="col col-12">
+                        <h2>${weatherData.name}, ${weatherData.sys.country}</h2> <hr>
+                    </div>
+                </div>
+
+                <div class="row weatherMain">
+                <!-- Weather Icon-->
+                    <div class="col col-6">
+                        <img src="./assets/images/forecast-icons/${weatherData.weather[0].icon}.png" alt="Weather Icon">
+                    </div>
+                <!-- Temperature and Weather Description-->
+                    <div class="col col-6">
+                        <h2>${Math.round(weatherData.main.temp)}&#8451;</h2>
+                        <p>${weatherData.weather[0].main}</p>
+                    </div>
+                </div>
+
+                <div class="row sunTimes">
+                <!-- Sun Rise Icon and Time-->
+                    <div class="col col-5">
+                        <h2><img src="./assets/images/sun-rise-time.png" alt="Wind"> ${sunRiseTime(weatherData.sys.sunrise, weatherData.timezone)}</h2>
+                    </div>
+                <!-- Sun Set Icon and Time-->
+                    <div class="col col-5">
+                        <h2><img src="./assets/images/sun-set-time.png" alt="Wind"> ${sunSetTime(weatherData.sys.sunset, weatherData.timezone)}</h2>
+                    </div>
+                </div>
+
+                <div class="row weatherForecasts">
+                <!-- Wind Icon and Speed-->
+                    <div class="col col-4">
+                        <h2><img src="./assets/images/wind-speed.png" alt="Wind"> ${msToKMH(weatherData.wind.speed)} <span class="unit">km/h</span></h2>
+                    </div>
+                <!-- Humidity Icon and Humidity-->
+                    <div class="col col-4">
+                        <h2><img src="./assets/images/humidity.png" alt="Humidity"> ${weatherData.main.humidity}<span class="unit">&#37;</span></h2>
+                    </div>
+                <!-- Rain Icon and Precipitation -->
+                    <div class="col col-4">
+                        <h2><img src="./assets/images/precipitation.png" alt="Rain"> ${ifRaining(weatherData.rain)}<span class="unit">mm</span></h2>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+                `;
+    document.getElementById("currentResults").classList.add("main-section");
+    document.getElementById("currentResults").innerHTML = output;
 }
 
 // Recieves data from searchFunction for 5 day weather forecast with 3 hour intervals in specified location
@@ -165,14 +201,14 @@ function ifRaining(rain){
     if(rain !== undefined){
         // 1h & 3h wrapped in square brackets as parameter begins with number and was throwing errors without square brackets.
         if(rain["1h"] !== undefined) {
-            return rain["1h"] + "mm"; 
+            return rain["1h"]; 
         } 
         
         if (rain["3h"] !== undefined) {
-            return rain["3h"] + "mm"; 
+            return rain["3h"]; 
         }
     // If not raining and rain parameter is undefined, returns 0mm precipitation
     } else{
-        return "0 mm";
+        return "0";
     }
 }

@@ -121,7 +121,7 @@
 .currentWeatherCard{
     margin: 0 auto;
     height: 39rem;
-    background: #3c77b9;
+    background: #f5f5f5;
     
     border: 1px black solid;
     border-radius: 5px;
@@ -191,4 +191,11 @@
 .weatherMain p{
     font-size: 1.8rem;
     color: darkslategrey;
+}
+
+.currentWeatherCard hr{
+    width: 25rem;
+    margin: auto;
+    border-top: 4px solid black;
+    border-radius: 50%;
 }
