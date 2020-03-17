@@ -120,8 +120,9 @@
 
 .currentWeatherCard{
     margin: 0 auto;
-    height: 45rem;
-    background: white;
+    height: 39rem;
+    background: #3c77b9;
+    
     border: 1px black solid;
     border-radius: 5px;
     width: 80rem;
@@ -130,11 +131,11 @@
 
 .currentWeatherCard .col{
     margin: auto;
+    text-align: center;
 }
 
 .location {
-    height: 10rem;
-    background: red;
+    height: 6rem;
 }
 
 .location h2{
@@ -147,16 +148,13 @@
 
 .weatherMain {
     height: 15rem;
-    background: yellow;
 }
 
 .sunTimes {
-    height: 10rem;
-    background: green;
+    height: 9rem;
 }
 .weatherForecasts {
-    height: 10rem;
-    background: rgb(42, 180, 226);
+    height: 9rem;
 }
 
 .weatherForecasts h2,
@@ -180,4 +178,17 @@
 
 .currentWeatherCard span{
     font-size: 20px;
+}
+
+.weatherMain img{
+    height: 15rem;
+}
+
+.weatherMain h2 {
+    font-size: 4.5rem;
+}
+
+.weatherMain p{
+    font-size: 1.8rem;
+    color: darkslategrey;
 }
