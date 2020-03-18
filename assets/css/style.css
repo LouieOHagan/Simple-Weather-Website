@@ -116,17 +116,18 @@
 /* --------------------------Home Page - Main Section */
 
 .main-section{
-    height: 100vh;
+    margin-bottom: 10px;
 }
 
 .currentWeatherCard{
     margin: 0 auto;
     height: 39rem;
     background: #f5f5f5;
-    border: 1px black solid;
-    border-radius: 5px;
+    border: 1px solid rgba(133, 133, 133, 0.329);
+    border-radius: 30px;
     width: 80rem;
     margin-top: 3rem;
+    box-shadow: 1.5px 1.5px 4px 1px rgba(133, 133, 133, 0.486);
 }
 
 .currentWeatherCard .col{
@@ -204,7 +205,6 @@
 
 .forecast-carousel {
     position: relative;
-    border: 1px solid red;
 }
 
 .forecast-carousel .next {
@@ -226,17 +226,57 @@
 }
 
 .forecast-carousel .carousel-wrapper {
-    width: 84%;
-    height: 350px;
+    width: 80%;
+    height: 375px;
     margin: 0 auto;
-    border: 1px dashed red;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
     overflow: hidden;
 }
 
-.forecast-carousel .carousel-wrapper .item {
+.forecast-carousel .carousel-wrapper .forecast-item {
     display: inline-block;
     width: 300px;
     margin: 0px 10px;
     height: 350px;
-    background: lightblue;
+    background: #f5f5f5;
+    border-radius: 30px;
+    border: 1px solid rgba(133, 133, 133, 0.329);
+    box-shadow: 1.5px 1.5px 4px 1px rgba(133, 133, 133, 0.486);
+}
+
+.forecast-item img {
+    width: 85px;
+    margin: auto;
+    display: block;
+}
+
+.forecast-item p {
+    margin: 0 0 0.2rem;
+    text-align: center;
+}
+
+.forecast-item p img {
+    width: 33px;
+    display: inline-block;
+}
+
+.forecast-item h3 {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+.forecast-item h4 {
+    text-align: center;
+    margin: 0;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.forecast-item h5 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
