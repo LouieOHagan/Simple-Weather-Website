@@ -42,13 +42,51 @@
     <section id="currentResults" >
         
     </section>
+
+    <!-- 3hr Forecast Carousel Section -->
+	<section class="carousel">
+		<!-- Forecast Carousel -->
+		<div class="forecast-carousel">
+			<h1>3hr Forecast</h1>
+            <i class="fas fa-chevron-left prev"></i>
+            <i class="fas fa-chevron-right next"></i>
+
+			<div class="carousel-wrapper">
+				<div class="item">
+                    <h3>Wed 15:00</h3>
+                    <p>8&#8451;</p>
+                    <p>Cloudy</p>
+                    <p>0mm</p>
+                    <p>21 km/h</p>
+                </div>
+				<div class="item">
+                    <h3>Wed 15:00</h3>
+                    <p>8&#8451;</p>
+                    <p>Cloudy</p>
+                    <p>0mm</p>
+                    <p>21 km/h</p>
+                </div>
+                <div class="item">
+                    <h3>Wed 15:00</h3>
+                    <p>8&#8451;</p>
+                    <p>Cloudy</p>
+                    <p>0mm</p>
+                    <p>21 km/h</p>
+                </div>
+                <div class="item">
+                    <h3>Wed 15:00</h3>
+                    <p>8&#8451;</p>
+                    <p>Cloudy</p>
+                    <p>0mm</p>
+                    <p>21 km/h</p>
+                </div>
+			</div>
+		</div>
+		<!-- / .Forecast Carousel -->
+	</section>
+	<!-- / .3hr Forecast Carousel Section -->
 </div>
 
-
-<!-- <input type="text" id="searchInput" placeholder="Enter City Name">
-<button id="searchButton">Search</button>
-<p style="font-size: 0.8rem;">Format: City Name, State (Optional), <a href="https://www.iban.com/country-codes" target="_blank">Country Code</a> (Optional)</p> -->
-<!-- <div id="ifError"></div> -->
 
 <div id="loader"></div>
 
@@ -59,6 +97,19 @@
     
 </div>
 
-<script src="./assets/js/weather-api.js"></script>
+    <!-- JavaScript Links Placed at bottom to increase page load times-->
+
+    <!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" type="text/javascript"></script>
+
+    <!-- Slick.js -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" type="text/javascript" ></script>
+
+    <!-- Carousel JS File -->
+    <script src="./assets/js/carousel.js" type="text/javascript"></script>
+
+    <!-- Weather API File -->
+    <script src="./assets/js/weather-api.js" type="text/javascript"></script>
+
 </body>
 </html>

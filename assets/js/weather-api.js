@@ -11,7 +11,8 @@ function searchFunction(link, setFunction){
     if(!userInput){
         document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Please Enter Valid City Name...</p>`;
         document.getElementById("searchInput").classList.add("ifErrorBorder");
-        document.getElementById("currentResult").innerHTML = '';
+        document.getElementById("currentResults").classList.remove("main-section");
+        document.getElementById("currentResults").innerHTML = '';
         document.getElementById("forecastResult").innerHTML = '';
         return;
     }
@@ -33,7 +34,8 @@ function searchFunction(link, setFunction){
                                                             </p>
                                                             `;
             document.getElementById("searchInput").classList.add("ifErrorBorder");
-            document.getElementById("currentResult").innerHTML = '';
+            document.getElementById("currentResults").classList.remove("main-section");
+            document.getElementById("currentResults").innerHTML = '';
             document.getElementById("forecastResult").innerHTML = '';
         }
     };
