@@ -10,10 +10,9 @@ function searchFunction(link, setFunction){
     // If userInput box is empty and user tries to search, returns error asking to enter city name
     if(!userInput){
         document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Please Enter Valid City Name...</p>`;
-        document.getElementById("searchInput").classList.add("ifErrorBorder");
+        document.getElementById("searchInput").style.border = "0.1rem solid red";
         document.getElementById("currentResults").classList.remove("main-section");
         document.getElementById("currentResults").innerHTML = '';
-        document.getElementById("forecastResult").innerHTML = '';
         document.getElementById("hidden").style.visibility = "hidden";
         return;
     }
@@ -27,7 +26,7 @@ function searchFunction(link, setFunction){
     xhr.onload = function() {
         if(this.status === 200){                    // Only checks if status = 200 as onload only runs if readyState = 4 already
             document.getElementById("ifError").innerHTML = '';
-            document.getElementById("searchInput").classList.remove("ifErrorBorder");
+            document.getElementById("searchInput").style.border = "0.1rem solid #fff";
             document.getElementById("hidden").style.visibility = "initial";
             setFunction(xhr.responseText);
         } else if (this.status === 404){
@@ -35,10 +34,9 @@ function searchFunction(link, setFunction){
                                                                 <span class="mistake">Think this is a mistake ? Let Us Know <a href="#" target="_blank">Here!</a></span>
                                                             </p>
                                                             `;
-            document.getElementById("searchInput").classList.add("ifErrorBorder");
+            document.getElementById("searchInput").style.border = "0.1rem solid red";
             document.getElementById("currentResults").classList.remove("main-section");
             document.getElementById("currentResults").innerHTML = '';
-            document.getElementById("forecastResult").innerHTML = '';
             document.getElementById("hidden").style.visibility = "hidden";
         }
     };
@@ -126,7 +124,6 @@ function forecastResults(forecastData) {
         cardRain[i].innerHTML = `<img src="./assets/images/precipitation.png" alt="Rain">${ifRaining(forecastData.list[i].rain)}mm`;
         cardHumidity[i].innerHTML = `<img src="./assets/images/humidity.png" alt="Humidity">${forecastData.list[i].main.humidity}&#37;`;
         cardWind[i].innerHTML = `<img src="./assets/images/wind-speed.png" alt="Wind Speed">${msToKMH(forecastData.list[i].wind.speed)} km/h`;
-        console.log("Test");
     }
 }
 

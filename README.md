@@ -41,7 +41,7 @@ The project was deployed to GitHub Pages using the following steps...
 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/LouieOHagan/Simple-Weather-Website)
 2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
-    - Alternatively Click [Here]() for a GIF demonstrating the process starting from Step 2.
+    - Alternatively Click [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/github-pages-deployment.gif) for a GIF demonstrating the process starting from Step 2.
 3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
 4. Under "Source", click the dropdown called "None" and select "Master Branch".
 5. The page will automatically refresh.

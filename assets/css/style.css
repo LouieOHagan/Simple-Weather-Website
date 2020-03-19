@@ -62,7 +62,9 @@
 }
 
 .search-bar:focus {
-    box-shadow: -1px 0px 14px 0.5px #32bbec
+    border:  0.1rem solid #32bbec;
+    /* Box Shadow values from Bootstrap */
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
 }
 
 .search-bar::placeholder{
@@ -107,10 +109,6 @@
 
 .emptyTextError .mistake a:hover{
     color: rgb(255, 217, 0);
-}
-
-.ifErrorBorder{
-    border: 1px solid red;
 }
 
 /* --------------------------Home Page - Main Section */
