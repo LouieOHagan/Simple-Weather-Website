@@ -14,6 +14,7 @@ function searchFunction(link, setFunction){
         document.getElementById("currentResults").classList.remove("main-section");
         document.getElementById("currentResults").innerHTML = '';
         document.getElementById("forecastResult").innerHTML = '';
+        document.getElementById("hidden").style.visibility = "hidden";
         return;
     }
     let units = "&units=metric";
@@ -27,6 +28,7 @@ function searchFunction(link, setFunction){
         if(this.status === 200){                    // Only checks if status = 200 as onload only runs if readyState = 4 already
             document.getElementById("ifError").innerHTML = '';
             document.getElementById("searchInput").classList.remove("ifErrorBorder");
+            document.getElementById("hidden").style.visibility = "initial";
             setFunction(xhr.responseText);
         } else if (this.status === 404){
             document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Location Not Found... Please ensure the correct spelling of your desired location. <br> 
@@ -37,6 +39,7 @@ function searchFunction(link, setFunction){
             document.getElementById("currentResults").classList.remove("main-section");
             document.getElementById("currentResults").innerHTML = '';
             document.getElementById("forecastResult").innerHTML = '';
+            document.getElementById("hidden").style.visibility = "hidden";
         }
     };
     
@@ -106,30 +109,25 @@ function currentWeatherResults(weatherData) {
 // Recieves data from searchFunction for 5 day weather forecast with 3 hour intervals in specified location
 function forecastResults(forecastData) {
     forecastData = JSON.parse(forecastData);    // Parses incoming data (forecastData) into JS Object Format (JSON) 
-
-    let forecastOutput = "";
+    let list = document.getElementById("myDIV");
+    let cardTime = list.getElementsByClassName("cardTime");
+    let cardImg = list.getElementsByClassName("cardImg");
+    let cardTemp = list.getElementsByClassName("cardTemp");
+    let cardWeather= list.getElementsByClassName("cardWeather");
+    let cardRain = list.getElementsByClassName("cardRain");
+    let cardHumidity = list.getElementsByClassName("cardHumidity");
+    let cardWind = list.getElementsByClassName("cardWind");
     let i;
-    forecastOutput += `
-                <div class="weatherForecast">
-                    <h1>${forecastData.city.name}</h1>
-                `;
-
-    for (i = 0; i < forecastData.list.length; i++  ) {
-
-        forecastOutput += ` 
-                        <p>Day ${[i]}</p>
-                        <ul>
-                            <li>Time: ${forecastDay(forecastData.list[i].dt_txt)}</li>
-                            <li>Weather: ${forecastData.list[i].weather[0].main}</li>
-                            <li>Temperature: ${Math.round(forecastData.list[i].main.temp)}&#8451;</li>
-                            <li>Precipitation: ${ifRaining(forecastData.list[i].rain)}</li>
-                            <li>Humidity: ${forecastData.list[i].main.humidity}&#37;</li>
-                            <li>Wind Speed: ${msToKMH(forecastData.list[i].wind.speed)} km/h</li>
-                        </ul>
-                    </div>`;
+    for(i = 0; i < 40; i++) {
+        cardTime[i].innerHTML = `${forecastDay(forecastData.list[i].dt_txt)}`;
+        cardImg[i].innerHTML = `<img src="./assets/images/forecast-icons/${forecastData.list[i].weather[0].icon}.png" alt="Wind">`;
+        cardTemp[i].innerHTML = `${Math.round(forecastData.list[i].main.temp)}&#8451;`;
+        cardWeather[i].innerHTML = `${forecastData.list[i].weather[0].main}`;
+        cardRain[i].innerHTML = `<img src="./assets/images/precipitation.png" alt="Rain">${ifRaining(forecastData.list[i].rain)}mm`;
+        cardHumidity[i].innerHTML = `<img src="./assets/images/humidity.png" alt="Humidity">${forecastData.list[i].main.humidity}&#37;`;
+        cardWind[i].innerHTML = `<img src="./assets/images/wind-speed.png" alt="Wind Speed">${msToKMH(forecastData.list[i].wind.speed)} km/h`;
+        console.log("Test");
     }
-
-    document.getElementById("forecastResult").innerHTML = forecastOutput;
 }
 
 // Gets every 3 hours time [for next 5 days] from forecastResults function and changes to display "Day of Week & Time"

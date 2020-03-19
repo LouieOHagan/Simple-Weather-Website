@@ -43,7 +43,7 @@
     height: 9.125rem;
     border-radius: 0.625rem;
     border: 0.1rem solid #fff;
-    margin-bottom: 5vh;
+    margin-bottom: 8vh;
 }
 
 .search-box{
@@ -202,6 +202,9 @@
 }
 
 /* --------------------------Home Page - Carousel */
+#hidden {
+    visibility: hidden; 
+}
 
 .forecast-carousel {
     position: relative;
@@ -210,7 +213,7 @@
 .forecast-carousel .next {
     position: absolute;
     top: 50%;
-    right: 30px;
+    right: 13%;
     font-size: 2rem;
     color: black;
     cursor: pointer;
@@ -219,7 +222,7 @@
 .forecast-carousel .prev {
     position: absolute;
     top: 50%;
-    left: 30px;
+    left: 13%;
     font-size: 2rem;
     color: black;
     cursor: pointer;
