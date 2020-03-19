@@ -37,7 +37,7 @@
 }
 
 .search-area{
-    background: #bc7860f7;
+    background: #bc7860;
     margin: auto;
     margin-top: -4.5625rem;
     height: 9.125rem;
@@ -111,6 +111,10 @@
     color: rgb(255, 217, 0);
 }
 
+.ifErrorBorder {
+    border: 0.1rem solid red;
+}
+
 /* --------------------------Home Page - Main Section */
 
 .main-section{
@@ -124,7 +128,7 @@
     border: 1px solid rgba(133, 133, 133, 0.329);
     border-radius: 30px;
     width: 80rem;
-    margin-top: 3rem;
+    margin-top: 0.5rem;
     box-shadow: 1.5px 1.5px 4px 1px rgba(133, 133, 133, 0.486);
 }
 

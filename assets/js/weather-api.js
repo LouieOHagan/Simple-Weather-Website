@@ -10,7 +10,7 @@ function searchFunction(link, setFunction){
     // If userInput box is empty and user tries to search, returns error asking to enter city name
     if(!userInput){
         document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Please Enter Valid City Name...</p>`;
-        document.getElementById("searchInput").style.border = "0.1rem solid red";
+        document.getElementById("searchInput").classList.add("ifErrorBorder");
         document.getElementById("currentResults").classList.remove("main-section");
         document.getElementById("currentResults").innerHTML = '';
         document.getElementById("hidden").style.visibility = "hidden";
@@ -26,15 +26,16 @@ function searchFunction(link, setFunction){
     xhr.onload = function() {
         if(this.status === 200){                    // Only checks if status = 200 as onload only runs if readyState = 4 already
             document.getElementById("ifError").innerHTML = '';
-            document.getElementById("searchInput").style.border = "0.1rem solid #fff";
+            document.getElementById("searchInput").classList.remove("ifErrorBorder");
             document.getElementById("hidden").style.visibility = "initial";
+            document.getElementById('currentResults').scrollIntoView({behavior: "smooth"});
             setFunction(xhr.responseText);
         } else if (this.status === 404){
             document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Location Not Found... Please ensure the correct spelling of your desired location. <br> 
                                                                 <span class="mistake">Think this is a mistake ? Let Us Know <a href="#" target="_blank">Here!</a></span>
                                                             </p>
                                                             `;
-            document.getElementById("searchInput").style.border = "0.1rem solid red";
+            document.getElementById("searchInput").classList.add("ifErrorBorder");
             document.getElementById("currentResults").classList.remove("main-section");
             document.getElementById("currentResults").innerHTML = '';
             document.getElementById("hidden").style.visibility = "hidden";
@@ -51,7 +52,7 @@ function currentWeatherResults(weatherData) {
     let output = "";
 
     output += `<div class="row">
-            <div class="col-8 currentWeatherCard">
+            <div id="middle" class="col-8 currentWeatherCard">
 
                 <div class="row location">
                     <div class="col col-12">
