@@ -2,6 +2,15 @@ document.getElementById("searchButton").addEventListener("click", searchFunction
 document.getElementById("searchButton").addEventListener("click", searchFunction.bind(this, "https://api.openweathermap.org/data/2.5/forecast?q=", forecastResults));
 const apiKey = "&appid=308bcfc339b942ce47cc8a976f8c4728";
 
+const node = document.getElementById("searchInput");
+node.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        console.log("test");
+        searchFunction("https://api.openweathermap.org/data/2.5/weather?q=", currentWeatherResults);
+        searchFunction("https://api.openweathermap.org/data/2.5/forecast?q=", forecastResults);
+    }
+});
+
 function searchFunction(link, setFunction){
     // Gets search box value and converts units to metric to be added to url
     let userInput = document.getElementById("searchInput").value;  
@@ -52,7 +61,7 @@ function currentWeatherResults(weatherData) {
     let output = "";
 
     output += `<div class="row">
-            <div id="middle" class="col-8 currentWeatherCard">
+            <div id="middle" class="col-11 col-sm-8 currentWeatherCard">
 
                 <div class="row location">
                     <div class="col col-12">
