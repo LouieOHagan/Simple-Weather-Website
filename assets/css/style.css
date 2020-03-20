@@ -306,6 +306,17 @@
     .emptyTextError {
         padding: 0.15rem 0 0 0.5rem;
     }
+
+    .location h2 {
+        font-size: 50px;
+    }
+
+    .currentWeatherCard hr {
+        width: 60%;
+        border-radius: 45%;
+    }
+
+
 }
 
 /* Active for screen sizes under 576px */
@@ -320,6 +331,13 @@
         padding-left: 10px;
     }
     
+    .currentWeatherCard {
+    height: 34rem;
+    }
+
+    .weatherMain {
+        height: 10rem;
+    }
 
     .search-area {
         margin-top: -4.0625rem;
@@ -328,6 +346,31 @@
 
     .search-box {
         padding: 2.5rem 0.5rem 0;
+    }
+
+    .location h2 {
+        font-size: 35px;
+    }
+
+    .weatherMain h2 {
+        font-size: 2.5rem;
+    }
+
+    .currentWeatherCard img {
+        height: 50px;
+    }
+
+    .weatherForecasts h2, 
+    .sunTimes h2 {
+    font-size: 24px;
+    }
+
+    .currentWeatherCard span {
+        font-size: 17px;
+    }
+
+    .weatherMain img {
+        height: 10rem;
     }
 }
 
@@ -351,5 +394,21 @@
 
     .search-btn {
         width: 2.5rem;
+    }
+
+    .weatherMain p {
+        font-size: 1.5rem;
+    }
+
+    .weatherMain img {
+        height: 6rem;
+    }
+
+    .weatherMain h2 {
+        font-size: 2rem;
+    }
+
+    .location h2 {
+        font-size: 30px;
     }
 }
