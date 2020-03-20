@@ -8,7 +8,7 @@ easily understandbale information that is friendly to all types of users.
 
 The website has 1 main page. Upon entering the site, the user is greeted with a very simple but warm design and is automatically given the opportunity to enter a location to find out the forecast for the coming days.
 
-Add picture of site on different devices here
+<h2 align="center"><img src="https://i.ibb.co/phyMfsd/Final-Showcase.jpg"></h2>
 
 ## User Experience (UX)
 
@@ -17,6 +17,15 @@ Add picture of site on different devices here
 - ### Design
     
 * ### Wireframes
+    * Home Page - Desktop Wireframe - [View]()   
+
+    * Home Page - Tablet Wireframe - [View]()
+
+    * Home Page - Mobile Wireframe - [View]()
+
+    * Home Page  - Contact Feature Wireframe - [View]()
+
+    * Click [Here]() for Document containing all Wireframes in .pdf format.
 
 ## Features
 
