@@ -61,7 +61,7 @@ function currentWeatherResults(weatherData) {
     let output = "";
 
     output += `<div class="row">
-            <div id="middle" class="col-11 col-sm-8 currentWeatherCard">
+            <div id="middle" class="col-11 col-md-8 currentWeatherCard">
 
                 <div class="row location">
                     <div class="col col-12">
