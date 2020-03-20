@@ -39,7 +39,7 @@ function searchFunction(link, setFunction){
             document.getElementById('currentResults').scrollIntoView({behavior: "smooth"});
             setFunction(xhr.responseText);
         } else if (this.status === 404){
-            document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Location Not Found... Please ensure the correct spelling of your desired location. <br> 
+            document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Location Not Found...
                                                                 <span class="mistake">Think this is a mistake ? Let Us Know <a href="#" target="_blank">Here!</a></span>
                                                             </p>
                                                             `;

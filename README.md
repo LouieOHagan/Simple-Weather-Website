@@ -20,6 +20,24 @@ Add picture of site on different devices here
 
 ## Features
 
+### To Do List
+- ~~Add auto-scroll when search button is pressed with valid input~~ - **Implemented 20/03/20**
+- ~~Add event listener for enter button that triggers search function~~ - **Implemented 20/03/20**
+- Add ::achieve on prev and next class buttons to have effect when pressed
+- Add footer
+- Add about us information
+- Complete README File and add developers note section
+- ~~Add OG meta titles and descriptions~~ - **Implemented 20/03/20**
+- Look into :placeholder text colour not working on Microsoft Edge
+- Add / Redo comments on all files to ensure files are easy to navigate through and to understand
+
+###### Last Updated: 10:41pm GMT - 20/03/20 
+
+### Features Left to Implement
+##### These are features that have not been added at the time of development due to various reasons such as time limitations.
+
+- Feature1
+
 ## Technologies Used
 
 ### Languages Used
