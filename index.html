@@ -1,467 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Simple Weather - Easy to Get, Easy to Read!">
+    <meta property="og:description" content="Making finding out the weather simple by removing graphs, charts and other confusing information that nobody really understands.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/logo-favicon.png" type="image/pmg">
+
+    <!-- Page Title -->
     <title>Simple Weather | Home</title>
 
-    <link rel="icon" href="assets/images/logo-favicon.png" type="image/x-icon">
+    <!-- CSS Links -->
 
+    <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Custom CSS File -->
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 </head>
+
 <body>
-<div class="container-fluid background">
-    <section class="landing-section">
-        <div class="row">
-            <div class="col-12 hero-image hero-text">
-                <img src="./assets/images/landing-image-text.png" alt="Text" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-11 col-md-8 search-area">
 
-                <div class="row">
-                    <div class="col-12 search-box">
-                        
-                        <input id="searchInput" class="search-bar" type="text" placeholder="Enter Location Name">
-                        <button id="searchButton" class="search-btn"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
+    <div class="container-fluid background">
+        <!-- Landing Page Section -->
+        <div class="landing-section">
 
-                <div class="row">
-                    <div class="col-12" id="ifError">
-                        
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="currentResults" >
-        
-    </section>
-
-	<section class="carousel" id="hidden">
-		<div class="forecast-carousel">
-            <i class="fas fa-chevron-left prev"></i>
-            <i class="fas fa-chevron-right next"></i>
+            <!-- Landing Page Image -->
             <div class="row">
-                <div id="myDIV" class="col-10 col-sm-11 col-md-8 carousel-wrapper">
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
-
-                    <div class="forecast-item">
-                        <h3 class="cardTime"></h3>
-                        <div class="cardImg"></div>
-                        <h4 class="cardTemp"></h4>
-                        <h5 class="cardWeather"></h5>
-                        <p class="cardRain"></p>
-                        <p class="cardHumidity"></p>
-                        <p class="cardWind"></p>
-                    </div>
+                <div class="col-12 hero-image hero-text">
+                    <img src="./assets/images/landing-image-text.png" alt="Text" />
                 </div>
-			</div>
-		</div>
-	</section>
+            </div>
+            <!-- / .Landing Page Image -->
 
-</div>
+            <!-- Location Search Section -->
+            <div class="row">
+                <div class="col-11 col-md-8 search-area">
+
+                    <!-- Search Bar -->
+                    <div class="row">
+                        <div class="col-12 search-box">
+                            <input id="searchInput" class="search-bar" type="text" placeholder="Enter Location Name">
+                            <button id="searchButton" class="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    <!-- / .Search Bar -->
+
+                    <!-- Search Bar Error - Elements Targetted if Error returned from User Search Input -->
+                    <div class="row">
+                        <div class="col-12" id="ifError"></div>
+                    </div>
+                    <!-- / .Search Bar Error -->
+
+                </div>
+            </div>
+            <!-- / .Location Search Section -->
+
+        </div>
+        <!-- / .Landing Page Section -->
+
+        <!-- Current Weather Card - Div ID targetted to display results of Current weather request -->
+        <div id="currentResults">
+
+        </div>
+        <!-- / .Current Weather Card -->
+
+        <!-- 5 Day Forecast Carousel Section - Hidden when nowhere has been searched, JavaScript changes CSS Properties when search is valid -->
+        <section class="carousel" id="hidden">
+            <div class="forecast-carousel">
+
+                <!-- Carousel Arrows -->
+                <i class="fas fa-chevron-left prev"></i>
+                <i class="fas fa-chevron-right next"></i>
+                <!-- / .Carousel Arrows -->
+
+                <div class="row">
+                    <!-- Carousel - Div ID is targetted and then values are inserted to classes of carousel cards -->
+                    <div id="myDIV" class="col-10 col-sm-11 col-md-8 carousel-wrapper">
+
+                        <!-- Carousel Cards -->
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+
+                        <div class="forecast-item">
+                            <h3 class="cardTime"></h3>
+                            <div class="cardImg"></div>
+                            <h4 class="cardTemp"></h4>
+                            <h5 class="cardWeather"></h5>
+                            <p class="cardRain"></p>
+                            <p class="cardHumidity"></p>
+                            <p class="cardWind"></p>
+                        </div>
+                        <!-- / .Carousel Cards -->
+                    </div>
+                    <!-- / .Carousel -->
+                </div>
+            </div>
+        </section>
+        <!-- / .5 Day Forecast Carousel Section -->
+
+    </div>
 
     <!-- JavaScript Links Placed at bottom to increase page load times-->
 
     <!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <!-- Slick.js -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -472,4 +509,5 @@
     <!-- Weather API File -->
     <script src="./assets/js/weather-api.js"></script>
 </body>
+
 </html>

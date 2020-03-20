@@ -5,7 +5,6 @@ const apiKey = "&appid=308bcfc339b942ce47cc8a976f8c4728";
 const node = document.getElementById("searchInput");
 node.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
-        console.log("test");
         searchFunction("https://api.openweathermap.org/data/2.5/weather?q=", currentWeatherResults);
         searchFunction("https://api.openweathermap.org/data/2.5/forecast?q=", forecastResults);
     }
