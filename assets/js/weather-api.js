@@ -17,12 +17,7 @@ function searchFunction(link, setFunction){
     userInput = userInput.replace(/\s/g,',');
     // If userInput box is empty and user tries to search, returns error asking to enter city name
     if(!userInput){
-        document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Please Enter Valid City Name...</p>`;
-        document.getElementById("searchInput").classList.add("ifErrorBorder");
-        document.getElementById("currentResults").classList.remove("main-section");
-        document.getElementById("currentResults").innerHTML = '';
-        document.getElementById("hidden").style.visibility = "hidden";
-        return;
+        onError("emptyInput");
     }
     let units = "&units=metric";
 
@@ -33,20 +28,10 @@ function searchFunction(link, setFunction){
 
     xhr.onload = function() {
         if(this.status === 200){                    // Only checks if status = 200 as onload only runs if readyState = 4 already
-            document.getElementById("ifError").innerHTML = '';
-            document.getElementById("searchInput").classList.remove("ifErrorBorder");
-            document.getElementById("hidden").style.visibility = "initial";
-            document.getElementById('currentResults').scrollIntoView({behavior: "smooth"});
+            onSuccessfulSearch();
             setFunction(xhr.responseText);
         } else if (this.status === 404){
-            document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Location Not Found...
-                                                                <span class="mistake">Think this is a mistake ? Let Us Know <a href="#" target="_blank">Here!</a></span>
-                                                            </p>
-                                                            `;
-            document.getElementById("searchInput").classList.add("ifErrorBorder");
-            document.getElementById("currentResults").classList.remove("main-section");
-            document.getElementById("currentResults").innerHTML = '';
-            document.getElementById("hidden").style.visibility = "hidden";
+            onError("404");
         }
     };
     
@@ -111,6 +96,29 @@ function currentWeatherResults(weatherData) {
                 `;
     document.getElementById("currentResults").classList.add("main-section");
     document.getElementById("currentResults").innerHTML = output;
+}
+
+function onSuccessfulSearch(){
+    document.getElementById("ifError").innerHTML = '';
+    document.getElementById("searchInput").classList.remove("ifErrorBorder");
+    document.getElementById("hidden").style.visibility = "initial";
+    document.getElementById('currentResults').scrollIntoView({behavior: "smooth"});
+}
+
+function onError(errorType){
+    if(errorType === "404") {
+        document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Location Not Found...
+                                                                <span class="mistake">Think this is a mistake ? Let Us Know <a href="#" target="_blank">Here!</a></span>
+                                                            </p>
+                                                            `;
+    } else if(errorType === "emptyInput") {
+        document.getElementById("ifError").innerHTML = `<p class="emptyTextError">Please Enter Valid City Name...</p>`;
+    }
+
+    document.getElementById("searchInput").classList.add("ifErrorBorder");
+    document.getElementById("currentResults").classList.remove("main-section");
+    document.getElementById("currentResults").innerHTML = '';
+    document.getElementById("hidden").style.visibility = "hidden";
 }
 
 // Recieves data from searchFunction for 5 day weather forecast with 3 hour intervals in specified location

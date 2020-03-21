@@ -17,15 +17,15 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 - ### Design
     
 * ### Wireframes
-    * Home Page - Desktop Wireframe - [View]()   
+    * Home Page - Desktop Wireframe - [View](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/wireframes/Home%20-%20Desktop.png)   
 
-    * Home Page - Tablet Wireframe - [View]()
+    * Home Page - Tablet Wireframe - [View](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/wireframes/Home%20-%20Tablet.png)
 
-    * Home Page - Mobile Wireframe - [View]()
+    * Home Page - Mobile Wireframe - [View](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/wireframes/Home%20-%20Mobile.png)
 
-    * Home Page  - Contact Feature Wireframe - [View]()
+    * Home Page  - Contact Feature Wireframe - [View](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/wireframes/Home%20-%20Contact%20Feature.png)
 
-    * Click [Here]() for Document containing all Wireframes in .pdf format.
+    * Click [Here](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/wireframes/Simple%20Weather%20Wireframes.pdf) for Document containing all Wireframes in .pdf format.
 
 ## Features
 
@@ -39,8 +39,9 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 - ~~Add OG meta titles and descriptions~~ - **Implemented 20/03/20**
 - Look into :placeholder text colour not working on Microsoft Edge
 - Add / Redo comments on all files to ensure files are easy to navigate through and to understand
+- Seperate ifError code in to functions and also seperate function for removing error to clean up search function
 
-###### Last Updated: 10:41pm GMT - 20/03/20 
+###### Last Updated: 11:33pm GMT - 20/03/20 
 
 ### Features Left to Implement
 ##### These are features that have not been added at the time of development due to various reasons such as time limitations.
