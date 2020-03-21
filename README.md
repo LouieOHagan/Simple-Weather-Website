@@ -39,9 +39,9 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 - ~~Add OG meta titles and descriptions~~ - **Implemented 20/03/20**
 - Look into :placeholder text colour not working on Microsoft Edge
 - Add / Redo comments on all files to ensure files are easy to navigate through and to understand
-- Seperate ifError code in to functions and also seperate function for removing error to clean up search function
+- ~~Seperate ifError code in to functions and also seperate function for removing error to clean up search function~~ - **Implemented 21/03/20**
 
-###### Last Updated: 11:33pm GMT - 20/03/20 
+###### Last Updated: 1:00pm GMT - 21/03/20 
 
 ### Features Left to Implement
 ##### These are features that have not been added at the time of development due to various reasons such as time limitations.
@@ -52,7 +52,40 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 
 ### Languages Used
 
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
 ### Frameworks, Libraries & Programs Used
+1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/) 
+    - Bootstrap was used to assist with the responsiveness and styling of the website.
+1. [Google Fonts:](https://fonts.google.com/)
+    - Google fonts were used to import the 'Raleway' font into the style.css file which is the primary font used in the project.
+1. [Font Awesome:](https://fontawesome.com/)
+    - Font Awesome was used to add icons for aesthetic and UX purposes. Icons specifcally used on Search Button & Carousel Arrows.
+1. [jQuery:](https://jquery.com/)
+    - jQuery was used for the 5 Day forecast carousel functionality. 
+1. [Slick.JS:](https://kenwheeler.github.io/slick/)
+    - Slick JS was also for the 5 Day forecast carousel functionality.
+1. [OpenWeatherMap API - Current Weather Data](https://openweathermap.org/current)
+    - OpenWeatherMap API was used to access the current weather data for the specified/searched location.
+1. [OpenWeatherMap API - 5 day / 3 hour forecast Data](https://openweathermap.org/forecast5)
+    - OpenWeatherMap API was used to access the 5 day forecast data with 3 hour intervals for the specified/searched location.
+1. [Git](https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+1. [Gitpod:](https://www.gitpod.io/)
+    - Gitpod was the primary IDE used throughout the entirety of the project. 
+1. [GitHub:](https://github.com/)
+    - GitHub is used to store the projects code after being pushed from Git.
+    - The website is also deployed using GitHub Pages.
+1. [Photoshop:](https://www.adobe.com/ie/products/photoshop.html)
+    - Photoshop was used to create the logo, hero image text, weather forecast icons, readme assets and editing photos for the website. 
+1. [Balsamiq:](https://balsamiq.com/)
+    - Balsamiq was used to create the [wireframes](https://github.com/LouieOHagan/Simple-Weather-Website#wireframes) during the design process. 
+1. [Screen to GIF](https://www.screentogif.com/)
+    - Screen to GIF was used to record the screen to create GIF's to demonstrate a specific task in video for the README.md file.
+1. [HTML Formatter](https://htmlformatter.com/)
+    - HTML Formatter was used to beautify code to keep the code neat and easy to read. It was utilised as Beautify Cmd (Shift + Alt + F) in GitPod distorted the code in GitHub.
 
 ## Testing
 

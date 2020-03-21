@@ -2,8 +2,8 @@ document.getElementById("searchButton").addEventListener("click", searchFunction
 document.getElementById("searchButton").addEventListener("click", searchFunction.bind(this, "https://api.openweathermap.org/data/2.5/forecast?q=", forecastResults));
 const apiKey = "&appid=308bcfc339b942ce47cc8a976f8c4728";
 
-const node = document.getElementById("searchInput");
-node.addEventListener("keyup", function(event) {
+const enterKeySearch = document.getElementById("searchInput");
+enterKeySearch.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
         searchFunction("https://api.openweathermap.org/data/2.5/weather?q=", currentWeatherResults);
         searchFunction("https://api.openweathermap.org/data/2.5/forecast?q=", forecastResults);
