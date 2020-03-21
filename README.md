@@ -32,16 +32,18 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 ### To Do List
 - ~~Add auto-scroll when search button is pressed with valid input~~ - **Implemented 20/03/20**
 - ~~Add event listener for enter button that triggers search function~~ - **Implemented 20/03/20**
-- Add ::achieve on prev and next class buttons to have effect when pressed
+- ~~Add ::achieve on prev and next class buttons to have effect when pressed~~ - **Implemented 21/03/20**
 - Add footer
 - Add about us information
 - Complete README File and add developers note section
 - ~~Add OG meta titles and descriptions~~ - **Implemented 20/03/20**
-- Look into :placeholder text colour not working on Microsoft Edge
+- ~~Look into :placeholder text colour not working on Microsoft Edge~~ - **Implemented & Fixed 21/03/20**
 - Add / Redo comments on all files to ensure files are easy to navigate through and to understand
 - ~~Seperate ifError code in to functions and also seperate function for removing error to clean up search function~~ - **Implemented 21/03/20**
+- ~~Look in to issue on Safari browser of times not showing up and showing Undefinded Nan:00~~ - **Implemented & Fixed 21/03/20**
+- Look in to issue of justify-content: space-evenly; not working on MS Edge and IE
 
-###### Last Updated: 1:00pm GMT - 21/03/20 
+###### Last Updated: 7:19pm GMT - 21/03/20 
 
 ### Features Left to Implement
 ##### These are features that have not been added at the time of development due to various reasons such as time limitations.

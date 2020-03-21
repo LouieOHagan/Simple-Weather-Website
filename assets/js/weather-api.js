@@ -134,7 +134,7 @@ function forecastResults(forecastData) {
     let cardWind = list.getElementsByClassName("cardWind");
     let i;
     for(i = 0; i < 40; i++) {
-        cardTime[i].innerHTML = `${forecastDay(forecastData.list[i].dt_txt)}`;
+        cardTime[i].innerHTML = `${forecastDay(forecastData.list[i].dt, forecastData.city.timezone)}`;
         cardImg[i].innerHTML = `<img src="./assets/images/forecast-icons/${forecastData.list[i].weather[0].icon}.png" alt="Wind">`;
         cardTemp[i].innerHTML = `${Math.round(forecastData.list[i].main.temp)}&#8451;`;
         cardWeather[i].innerHTML = `${forecastData.list[i].weather[0].main}`;
@@ -145,23 +145,14 @@ function forecastResults(forecastData) {
 }
 
 // Gets every 3 hours time [for next 5 days] from forecastResults function and changes to display "Day of Week & Time"
-function forecastDay(timestamp){
-    let weekDay = new Date(timestamp);
-    // Code from W3Schools to name each day instead of returning number of day in week - https://www.w3schools.com/jsref/jsref_getday.asp
-    let day = new Array(7);
-    day[0] = "Sun"; day[1] = "Mon"; day[2] = "Tue"; day[3] = "Wed"; day[4] = "Thu"; day[5] = "Fri"; day[6] = "Sat";
-    let weekDayName = day[weekDay.getDay()];
+function forecastDay(timestamp, timezone){
+    let forecastDay = new Date((timestamp + timezone) * 1000);
+    let words = forecastDay.toString().split(' ')
+    let day = words[0]
+    let dayTime = words[4].slice(0, 5)
 
-    // Variable getting hours value from timestamp
-    let dayTime = weekDay.getHours();
-    // adds 0 in front of any number below 10 as by default would appear 6:8 rather than 06:08
-    if(dayTime < 10){
-        dayTime = `0${dayTime}`;
-    }
-
-    return `${weekDayName} ${dayTime}:00`;
-}
-
+    return `${day} ${dayTime}`;
+} 
 
 // Converts wind speed from m/s to km/h (* 3.6) & limits result to 1 decimal place.
 function msToKMH(wind) {
