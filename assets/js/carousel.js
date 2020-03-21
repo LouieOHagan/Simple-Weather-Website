@@ -1,4 +1,4 @@
-$(document).ready(function(){
+function sliderInit(){
     $('.carousel-wrapper').slick({
         infinite: false,
         slidesToShow: 4,
@@ -7,26 +7,27 @@ $(document).ready(function(){
         prevArrow: $('.prev'),
         responsive: [
     {
-      breakpoint: 1024,
-      settings: {
+    breakpoint: 1024,
+    settings: {
         slidesToShow: 3,
         slidesToScroll: 2,
-      }
+    }
     },
     {
-      breakpoint: 535,
-      settings: {
+    breakpoint: 535,
+    settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
-      }
+    }
     },
     {
-      breakpoint: 385,
-      settings: {
+    breakpoint: 385,
+    settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-      }
+    }
     },
-  ]
+]
     });
-});
+}
+sliderInit();

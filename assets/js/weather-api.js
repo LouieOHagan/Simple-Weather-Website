@@ -101,7 +101,7 @@ function currentWeatherResults(weatherData) {
 function onSuccessfulSearch(){
     document.getElementById("ifError").innerHTML = '';
     document.getElementById("searchInput").classList.remove("ifErrorBorder");
-    document.getElementById("hidden").style.visibility = "initial";
+    // document.getElementById("hidden").style.visibility = "initial";
     document.getElementById('currentResults').scrollIntoView({behavior: "smooth"});
 }
 
@@ -124,24 +124,45 @@ function onError(errorType){
 // Recieves data from searchFunction for 5 day weather forecast with 3 hour intervals in specified location
 function forecastResults(forecastData) {
     forecastData = JSON.parse(forecastData);    // Parses incoming data (forecastData) into JS Object Format (JSON) 
-    let list = document.getElementById("myDIV");
-    let cardTime = list.getElementsByClassName("cardTime");
-    let cardImg = list.getElementsByClassName("cardImg");
-    let cardTemp = list.getElementsByClassName("cardTemp");
-    let cardWeather= list.getElementsByClassName("cardWeather");
-    let cardRain = list.getElementsByClassName("cardRain");
-    let cardHumidity = list.getElementsByClassName("cardHumidity");
-    let cardWind = list.getElementsByClassName("cardWind");
+    
+    let forecastOutput = '';
     let i;
-    for(i = 0; i < 40; i++) {
-        cardTime[i].innerHTML = `${forecastDay(forecastData.list[i].dt, forecastData.city.timezone)}`;
-        cardImg[i].innerHTML = `<img src="./assets/images/forecast-icons/${forecastData.list[i].weather[0].icon}.png" alt="Wind">`;
-        cardTemp[i].innerHTML = `${Math.round(forecastData.list[i].main.temp)}&#8451;`;
-        cardWeather[i].innerHTML = `${forecastData.list[i].weather[0].main}`;
-        cardRain[i].innerHTML = `<img src="./assets/images/precipitation.png" alt="Rain">${ifRaining(forecastData.list[i].rain)}mm`;
-        cardHumidity[i].innerHTML = `<img src="./assets/images/humidity.png" alt="Humidity">${forecastData.list[i].main.humidity}&#37;`;
-        cardWind[i].innerHTML = `<img src="./assets/images/wind-speed.png" alt="Wind Speed">${msToKMH(forecastData.list[i].wind.speed)} km/h`;
+
+    forecastOutput += `
+                    <div class="forecast-carousel">
+                        <!-- Carousel Arrows -->
+                        <i class="fas fa-chevron-left prev"></i>
+                        <i class="fas fa-chevron-right next"></i>
+                        <!-- / .Carousel Arrows -->
+
+                        <div class="row">
+                            <!-- Carousel - Div ID is targetted and then values are inserted to classes of carousel cards -->
+                            <div id="myDIV" class="col-10 col-sm-11 col-md-8 carousel-wrapper">
+                    `;
+    for(i = 0; i < forecastData.list.length; i++) {
+        forecastOutput += `
+                        <div class="forecast-item">
+                            <h3 class="cardTime">${forecastDay(forecastData.list[i].dt, forecastData.city.timezone)}</h3>
+                            <div class="cardImg"><img src="./assets/images/forecast-icons/${forecastData.list[i].weather[0].icon}.png" alt="Wind"></div>
+                            <h4 class="cardTemp">${Math.round(forecastData.list[i].main.temp)}&#8451;</h4>
+                            <h5 class="cardWeather">${forecastData.list[i].weather[0].main}</h5>
+                            <p class="cardRain"><img src="./assets/images/precipitation.png" alt="Rain">${ifRaining(forecastData.list[i].rain)}mm</p>
+                            <p class="cardHumidity"><img src="./assets/images/humidity.png" alt="Humidity">${forecastData.list[i].main.humidity}&#37;</p>
+                            <p class="cardWind"><img src="./assets/images/wind-speed.png" alt="Wind Speed">${msToKMH(forecastData.list[i].wind.speed)} km/h</p>
+                        </div>
+                        `;
     }
+
+    forecastOutput += `
+                    </div>
+                    <!-- / .Carousel -->
+                </div>
+            </div>
+            `;
+    
+    document.getElementById("carouselTarget").classList.add("carousel");
+    document.getElementById("carouselTarget").innerHTML = forecastOutput;
+    sliderInit();
 }
 
 // Gets every 3 hours time [for next 5 days] from forecastResults function and changes to display "Day of Week & Time"

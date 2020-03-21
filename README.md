@@ -41,7 +41,7 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 - Add / Redo comments on all files to ensure files are easy to navigate through and to understand
 - ~~Seperate ifError code in to functions and also seperate function for removing error to clean up search function~~ - **Implemented 21/03/20**
 - ~~Look in to issue on Safari browser of times not showing up and showing Undefinded Nan:00~~ - **Implemented & Fixed 21/03/20**
-- Look in to issue of justify-content: space-evenly; not working on MS Edge and IE
+- Add help section or popup to better explain search system and format
 
 ###### Last Updated: 7:19pm GMT - 21/03/20 
 
