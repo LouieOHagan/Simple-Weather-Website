@@ -68,11 +68,11 @@ function currentWeatherResults(weatherData) {
                 <div class="row sunTimes">
                 <!-- Sun Rise Icon and Time-->
                     <div class="col col-5">
-                        <h2><img src="./assets/images/sun-rise-time.png" alt="Wind"> ${sunRiseTime(weatherData.sys.sunrise, weatherData.timezone)}</h2>
+                        <h2><img src="./assets/images/sun-rise-time.png" alt="Wind"> ${sunTimes(weatherData.sys.sunrise, weatherData.timezone)}</h2>
                     </div>
                 <!-- Sun Set Icon and Time-->
                     <div class="col col-5">
-                        <h2><img src="./assets/images/sun-set-time.png" alt="Wind"> ${sunSetTime(weatherData.sys.sunset, weatherData.timezone)}</h2>
+                        <h2><img src="./assets/images/sun-set-time.png" alt="Wind"> ${sunTimes(weatherData.sys.sunset, weatherData.timezone)}</h2>
                     </div>
                 </div>
 
@@ -147,9 +147,9 @@ function forecastResults(forecastData) {
 // Gets every 3 hours time [for next 5 days] from forecastResults function and changes to display "Day of Week & Time"
 function forecastDay(timestamp, timezone){
     let forecastDay = new Date((timestamp + timezone) * 1000);
-    let words = forecastDay.toString().split(' ')
-    let day = words[0]
-    let dayTime = words[4].slice(0, 5)
+    let newTimestamp = forecastDay.toString().split(' ');
+    let day = newTimestamp[0];
+    let dayTime = newTimestamp[4].slice(0, 5);
 
     return `${day} ${dayTime}`;
 } 
@@ -160,45 +160,12 @@ function msToKMH(wind) {
 }
 
 // Takes time that sun rises, converts to local timezone and returns the hours and minutes only.
-function sunRiseTime(sunRiseValue, timezoneValue) {
+function sunTimes(sunTimeValue, timezoneValue) {
     // Adds sun rise time & timezone unix values, converts to timestamps and converts seconds to milliseconds (* 1000)
-    let sunrise = new Date((sunRiseValue + timezoneValue) * 1000);
-    let sunRiseHours = sunrise.getHours();          // Variable getting hours value from timestamp
-    let sunRiseMinutes = sunrise.getMinutes();      // Variable getting minutes value from timestamp
-
-    // adds 0 in front of any number below 10 as by default would appear 6:8 rather than 06:08
-    if(sunRiseHours < 10){
-        sunRiseHours = `0${sunRiseHours}`;
-    }
-
-    if(sunRiseMinutes < 10){
-        sunRiseMinutes = `0${sunRiseMinutes}`;
-    }
-
-    let sunRiseTime = `${sunRiseHours}:${sunRiseMinutes}`;
-
-    return sunRiseTime;
-}
-
-// Takes time that sun sets, converts to local timezone and returns the hours and minutes only.
-function sunSetTime(sunSetValue, timezoneValue){
-    // Adds sun set time & timezone unix values, converts to timestamps and converts seconds to milliseconds (* 1000)
-    let sunset = new Date((sunSetValue + timezoneValue) * 1000);
-    let sunSetHours = sunset.getHours();            // Variable getting hours value from timestamp
-    let sunSetMinutes = sunset.getMinutes();        // Variable getting minutes value from timestamp  
-
-    // adds 0 in front of any number below 10 as by default would appear 6:8 rather than 06:08
-    if(sunSetMinutes < 10){
-        sunSetMinutes = `0${sunSetMinutes}`;
-    } 
-
-    if(sunSetHours < 10){
-        sunSetHours = `0${sunSetHours}`;
-    }
-
-    let sunSetTime = `${sunSetHours}:${sunSetMinutes}`;
-
-    return sunSetTime;
+    let sunTime = new Date((sunTimeValue + timezoneValue) * 1000);
+    let sunTimeToString = sunTime.toString().split(' ');
+    let sunTimeStringSliced = sunTimeToString[4].slice(0,5);
+    return sunTimeStringSliced;
 }
 
 // Checks if rain parameters is defined as API only displays calculated data (not raining = no rain parameter in API Response)
