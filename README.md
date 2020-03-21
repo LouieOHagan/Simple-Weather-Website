@@ -140,9 +140,16 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 ## Credits
 
 ### Code
+- [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System. 
 
 ### Content
 
 ### Media
+- [Pixabay](https://pixabay.com/): The landing page image of the mountains and sky was obtained from Pixabay.
+
+- [Google Images](https://www.google.com/imghp?hl=en): Cloud shape for forecast icons obtained from google images.
 
 ### Acknowledgements
+- My Mentor Adegbenga Adeye for continuous helpful feedback and ideas to improve both myself as a developer and my project.
+
+- Idea of contact button that pops up which is a feature that was not implemented due to time limitations was inspired by the [World Weather Online](https://www.worldweatheronline.com/developer/api/docs/) website

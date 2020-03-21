@@ -67,9 +67,21 @@
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
 }
 
+/* Placeholder Text psudo class section 
+ Not merged together using comma to split as wasnt working when merged
+---------------------------------------*/
 .search-bar::placeholder{
     color: #fff;
 }
+/* Double colon for Internet Explorer */
+.search-bar::-ms-input-placeholder {
+    color: #fff;
+}
+/* Single colon for Microsoft Edge */
+.search-bar:-ms-input-placeholder {
+    color: #fff;
+}
+/* ------------------------------------*/
 
 .search-btn{
     background: #60a3bc;
@@ -230,6 +242,12 @@
     font-size: 2rem;
     color: black;
     cursor: pointer;
+}
+
+.forecast-carousel .prev:active,
+.forecast-carousel .next:active {
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
 }
 
 .forecast-carousel .carousel-wrapper {
