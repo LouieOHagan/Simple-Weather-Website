@@ -4,7 +4,7 @@
 
 This is a website for an organisation called "Simple Weather". Simple Weather's vision is to make finding out the current weather forecast and the forecast for the following days as easy as possible. 
 Their goal is to provide a simplistic, navigable website by removing any graphs, charts and other confusing information that the average user struggles to comprehend and replacing it with simple and 
-easily understandbale information that is friendly to all types of users.
+easily understandable information that is friendly to all types of users.
 
 The website has 1 main page. Upon entering the site, the user is greeted with a very simple but warm design and is automatically given the opportunity to enter a location to find out the forecast for the coming days.
 
@@ -15,7 +15,7 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 - ### User stories
 
     - #### User Goals
-        1. As a Visitor, I want to greeted with an easily navigable website that makes finding the simple information I am looking for a seamless task.
+        1. As a Visitor, I want to be greeted with an easily navigable website that makes finding the simple information I am looking for a seamless task.
         2. As a Visitor, I want to easily be able to find a search bar to input the location I want the weather forecast for.
         3. As a Visitor, I want to easily be able to find the current weather forecast for the location that I inputted in to the search bar.
         4. As a Visitor, I want to easily be able to find the weather forecast for the coming days for the location that I inputted in to the search bar.
@@ -33,11 +33,11 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
             - [#60a3bc](https://www.color-hex.com/color/00a8ec) (Slightly desaturated blue): "Blue is the colour of the mind and is essentially soothing; it affects us mentally, 
             rather than the physical reaction we have to red. Strong blues will stimulate clear thought and lighter, soft blues will calm the mind and aid concentration. Consequently 
             it is serene and mentally calming. It is the colour of clear communication."
-        - [Sessions EDU](https://www.sessions.edu/color-calculator/): After determing that #bc7860 would be the primary colour after extracting it from the image used, Sessions EDU
+        - [Sessions EDU](https://www.sessions.edu/color-calculator/): After determining that #bc7860 would be the primary colour after extracting it from the image used, Sessions EDU
         was used to find the best colour that complimented #bc7860, which in this case was #60a3bc. Sessions EDU was also used to determine what colour was monochromatic to #60a3bc
         so that it could be used on any elements such as buttons when a user hovered over them, which in this case was #3284a2 (a dark moderate blue.).
             - #bc7860 Complimentary colour - [Here](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/Colour-Scheme-Complimentary.png)
-            - $60a3bc Monochromatic colour - [Here](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/Blue-Monochromatic-Colour.png)
+            - #60a3bc Monochromatic colour - [Here](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/Blue-Monochromatic-Colour.png)
 
     - #### Typography
         - The Raleway font is the primary font used throughout the whole website with Sans Serif as the backup font in case for any reason the font isn't being imported into the 
@@ -52,9 +52,9 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
     - #### Imagery
         - Imagery was a massive factor when it came to design, it always is but was especially important for this project. When the user loads on the page, 85% of the page height is 
         taken up by the image that contains the words "Weather Made Simple" so it was essential that the image instantly ticked off the design criteria, drew in the user and that 
-        the colour scheme and imagery matched and/or complimented one another. The image used was chosen as it was a great mix of warm and welcoming colours, the white texted
+        the colour scheme and imagery matched and/or complement one another. The image used was chosen as it was a great mix of warm and welcoming colours, the white texted
         worked really well on top of it and the colour was a unique orange that made for a great colour scheme. The weather icon images were also a big focus throughout the project 
-        and a lot of time went in to making them simplistic but effective. 
+        and a lot of time went into making them simplistic but effective. 
     
 * ### Wireframes
     * Home Page - Desktop Wireframe - [View](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/wireframes/Home%20-%20Desktop.png)   
@@ -79,8 +79,8 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 - ~~Add OG meta titles and descriptions~~ - **Implemented 20/03/20**
 - ~~Look into :placeholder text colour not working on Microsoft Edge~~ - **Implemented & Fixed 21/03/20**
 - ~~Add / Redo comments on all files to ensure files are easy to navigate through and to understand~~ - **Implemented 22/03/20**
-- ~~Seperate ifError code in to functions and also seperate function for removing error to clean up search function~~ - **Implemented 21/03/20**
-- ~~Look in to issue on Safari browser of times not showing up and showing Undefinded Nan:00~~ - **Implemented & Fixed 21/03/20**
+- ~~Separate ifError code into functions and also separate function for removing error to clean up search function~~ - **Implemented 21/03/20**
+- ~~Look into issue on Safari browser of times not showing up and showing Undefined Nan:00~~ - **Implemented & Fixed 21/03/20**
 - Add help section or popup to better explain search system and format
 - ~~Convert all units from px to rem in css~~ - **Implemented 22/03/20**
 - Add titles to easily distinguish what each card and carousel are for, better UX.
@@ -108,7 +108,7 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 1. [Google Fonts:](https://fonts.google.com/)
     - Google fonts were used to import the 'Raleway' font into the style.css file which is the primary font used in the project.
 1. [Font Awesome:](https://fontawesome.com/)
-    - Font Awesome was used to add icons for aesthetic and UX purposes. Icons specifcally used on Search Button & Carousel Arrows.
+    - Font Awesome was used to add icons for aesthetic and UX purposes. Icons specifically used on Search Button & Carousel Arrows.
 1. [jQuery:](https://jquery.com/)
     - jQuery was used for the 5 Day forecast carousel functionality. 
 1. [Slick.JS:](https://kenwheeler.github.io/slick/)
@@ -122,7 +122,7 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 1. [Gitpod:](https://www.gitpod.io/)
     - Gitpod was the primary IDE used throughout the entirety of the project. 
 1. [GitHub:](https://github.com/)
-    - GitHub is used to store the projects code after being pushed from Git.
+    - GitHub is used to store the project code after being pushed from Git.
     - The website is also deployed using GitHub Pages.
 1. [Photoshop:](https://www.adobe.com/ie/products/photoshop.html)
     - Photoshop was used to create the logo, hero image text, weather forecast icons, readme assets and editing photos for the website. 
@@ -138,9 +138,9 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 ### Testing User Stories from User Experience (UX) Section
 
 - #### First Time Visitor Goals
-    1. As a Visitor, I want to greeted with an easily navigable website that makes finding the simple information I am looking for a seamless task.
-        1. Upon successful loading of the website the user is greeted with the lannding page.
-        1. To make the process as simple and easy as possible, the user cannot scroll down or navigate anywhere and can easily get information by inputting a location in to the search bar.
+    1. As a Visitor, I want to be greeted with an easily navigable website that makes finding the simple information I am looking for a seamless task.
+        1. Upon successful loading of the website the user is greeted with the landing page.
+        1. To make the process as simple and easy as possible, the user cannot scroll down or navigate anywhere and can easily get information by inputting a location into the search bar.
         1. Demonstration GIF can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20GIF%201.gif) 
         1. Pictures can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20Picture%201%20%26%202.png)
 
@@ -150,53 +150,77 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
         1. Demonstration GIF can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20GIF%202.gif)
         1. Pictures can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20Picture%201%20%26%202.png)
 
-    3. As a Visitor, I want to easily be able to find the current weather forecast for the location that I inputted in to the search bar.
-        1. Upon successful loading of the website the user is greeted with the lannding page.
+    3. As a Visitor, I want to easily be able to find the current weather forecast for the location that I inputted into the search bar.
+        1. Upon successful loading of the website the user is greeted with the landing page.
         1. The landing page is clean and simply laid out, towards the bottom of the screen in the very center the user can easily identify the search bar with placeholder text "Enter Location Name".
-        1. After typing a location name in to the search box the user can click the search button to search. Alternatively, most experienced computers users will click the "Enter" key after typing which will also submit there search request.
-        1. After the button has been pressed or "Enter" Key has been pressed, the page will automatically scroll down to the weather data for the users searched location.
+        1. After typing a location name into the search box the user can click the search button to search. Alternatively, most experienced computer users will click the "Enter" key after typing which will also submit their search request.
+        1. After the button has been pressed or the "Enter" Key has been pressed, the page will automatically scroll down to the weather data for the user's searched location.
         1. The current weather forecast and other simple data can be seen in the big card in the center of the screen.
         1. Demonstration GIF can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20GIF%203.gif)
         1. Pictures can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20Picture%203.png)
 
     4. As a Visitor, I want to easily be able to find the weather forecast for the coming days for the location that I inputted in to the search bar
-        1. Upon successful loading of the website the user is greeted with the lannding page.
+        1. Upon successful loading of the website the user is greeted with the landing page.
         1. The landing page is clean and simply laid out, towards the bottom of the screen in the very center the user can easily identify the search bar with placeholder text "Enter Location Name".
-        1. After typing a location name in to the search box the user can click the search button to search. Alternatively, most experienced computers users will click the "Enter" key after typing which will also submit there search request.
-        1. After the button has been pressed or "Enter" Key has been pressed, the page will automatically scroll down to the weather data for the users searched location.
+        1. After typing a location name into the search box the user can click the search button to search. Alternatively, most experienced computer users will click the "Enter" key after typing which will also submit their search request.
+        1. After the button has been pressed or the "Enter" Key has been pressed, the page will automatically scroll down to the weather data for the user's searched location.
         1. The weather forecast for the coming days for the location that the user inputted can be seen in a carousel below the current weather card.
         1. Demonstration GIF can be found [Here](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/User%20Story%20Testing/User%20Story%20GIF%204.gif)
         1. Pictures can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20Picture%204.png)
 
 ### Further Testing
 - The website was tested across a wide range of devices and browsers to ensure its fully responsive and compatible for all users.
-    - Devices: The website was tested on Desktop, HP Envy Laptop, iPhone7, iPhone8, iPhoneX & Chrome Developer tools was also used to test the screen sizes of 33 devices. Full list of 33 devices can be found [Here]()
+    - Devices: The website was tested on Desktop, HP Envy Laptop, iPhone7, iPhone8, iPhoneX & Chrome Developer tools was also used to test the screen sizes of 33 devices. 
+    Full list of 33 devices can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/Devices%20list.png)
     - Browsers: The website was tested on Chrome, Microsoft Edge, Safari, Firefox and Internet Explorer.
 
-- {behavior: "smooth"} in scrollIntoView function on line 56 of weather-api.js not working on many browsers.
-    - After research and continuous testing I discovered that this property is not supported on many browsers, Table of compatability found [Here]() from MDN Web Docs 
-    (Note: any browser with astericks on scrollIntoView line does NOT support property, any browser with "No" on scrollIntoViewOptions does NOT support property).
+- ```{behavior: "smooth"}``` in scrollIntoView function on line 56 of weather-api.js not working on many browsers.
+    - After research and continuous testing I discovered that this property is not supported on many browsers, Table of compatibility found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/scrollIntoView-browser-compatability.PNG) 
+    from MDN Web Docs (Note: any browser with asterisks on scrollIntoView line does NOT support property, any browser with "No" on scrollIntoViewOptions does NOT support property).
 
-- Previous and Next carousel arrows hidden behind carousel in iPad view (768px in width), disrupting functionality of carousel.
+- Previous and Next carousel arrows hidden behind the carousel in iPad view (768px in width), disrupting functionality of carousel.
     - After looking in to the issue, bootstrap md class only changed after 767px where as my media query was changing the location of the arrows at 768px, hence the arrows hidden behind
-    the carousel cards. Decision was made to make new media query on line 347 of style.css that made arrow changes at 767px to ensure optimal website functionality for iPad users.
+    the carousel cards. Decision was made to make a new media query on line 347 of style.css that made arrow changes at 767px to ensure optimal website functionality for iPad users.
 
 - Placeholder text colour inside of the search input box was not changing to white on Microsoft Edge.
-    - After looking in to the issue I discovered that the placeholder pseudo class was not supported on Microsoft Edge by default and instead required :-ms=input-placeholder pseduo class.
-        - Single colon syntax required for Internet Explorer - :-ms=input-placeholder
-        - Double colon syntax required for Microsoft Edge - ::-ms=input-placeholder
+    - After looking in to the issue I discovered that the placeholder pseudo class was not supported on Microsoft Edge by default and instead required ```:-ms=input-placeholder``` pseudo class.
+        - Single colon syntax required for Internet Explorer - ```:-ms-input-placeholder```
+        - Double colon syntax required for Microsoft Edge - ```::-ms-input-placeholder```
 
-- Active pseduo class content not working on Microsoft Edge 
-    - After looking in to the issue I discovered that Microsoft Edge was not supporting any colours that had a lower opacity than 1 and if a colour had a lower opacity the colour didnt 
+- Active pseudo class content not working on Microsoft Edge 
+    - After looking into the issue I discovered that Microsoft Edge was not supporting any colours that had a lower opacity than 1 and if a colour had a lower opacity the colour didn't 
     show at all. To fix the issue I just changed the drop shadow opacity from 0.8 to 1 as after testing I noticed it did not make a noticable difference.
 
-- Search Area background colour was not showing on Microsoft Edge when value was #bc7860f7
+- Search Area background colour was not showing on Microsoft Edge when value was ```#bc7860f7```
     - After looking in to the issue I discovered that Microsoft Edge was not supporting any colours that had a lower opacity than 1 and if a colour had a lower opacity the colour didnt 
-    show at all. To fix the issue I removed the "f7" at the end of the colour code as I was satisfied with colour even with out the lowered opcaity.
+    show at all. To fix the issue I removed the "f7" at the end of the colour code as I was satisfied with colour even without the lowered opacity.
 
-- Times not working on 
+- Times not working on forecast carousel card for next 5 days with 3 hour intervals on Safari browser. Instead of showing "Day, Time of Day" it was returning "undefined, NaN:00"
+    - After looking into it, I can't say for certain what was causing the issue and what in the function the Safari browser was not supporting but I found a different way of doing the same thing.
+    - Instead of using the ```getDays()``` and ```getHours()``` methods, I used the ```toString()``` method to stringify the data timestamp and then used ```split()``` method to be able to target specific parts
+    of the timestamp as I was getting errors in my console when I tried to use the split method without converting the date to a string. 
+    - I got the day name using indexes after the split method and then I used the ```slice()``` method to get rid of the last colon and seconds in the time so it was 06:00 rather than 06:00:00
+    - After figuring out this way of doing things, I realised the code was a lot cleaner as it eliminated the if statements I had before seeing as the getHours and getMinutes methods did not return a 
+    0 before a number less than 10 eg was showing as 6:6 rather than 06:06. I then replicated the function without getting the day name and merged the sunSetFunction and sunRiseFunction together to 
+    one shorter and cleaner function.
+
+- When onError function is run after there is a user input error caused by an empty input box or misspelled word the API console logs 2 400 or 404 errors depending what user input error occurred.
+    - After looking in to it I could find a solution to this as it seems the API does this and can't be stopped however in order to inform the user of the error, the onError function
+    is run which manipulates the DOM to add text to the ifError div and red border colour on the input box, informing the user of the error.
+
+- Search functionality not working on Internet explorer making the site unusable on internet explorer.
+    - After looking into the issue I noticed the console was not recognising the += in ```output +=``` as valid syntax. Unfortunately due to time limitations I could not find a fix for 
+    this issue and has been added to the known bugs section. I also asked my fellow peers, some of whom were also having the same issue.
+
+- ```justify-content: space-evenly;``` does not work on 
 
 ### Known Bugs
+- Search functionality not working on internet explorer. Description in Further Testing section above.
+- Scroll function after search only scrolls to haflway down to the div on the original search after page is first loaded. 
+    - Function was working correctly originally but something was done that made it stop working, due to time limitations the reason behind the issue could not be found or corrected.
+- API is an American API so by default Dublin returns Dublin US, to find Dublin Ireland, "Dublin IE" must be searched. 
+    - The API is very picky when it comes to the search functionality. I have tried my best to limit issues by remvoing spaces in searches and replacing with commas so that the API
+    recognizes the search but the API still has a few bugs with search locations, would change API in the future.
 
 ## Deployment
 
@@ -243,9 +267,9 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 ## Credits
 
 ### Code
-- [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System. 
+- [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make the site responsive using the Bootstrap Grid System. 
 
-- [Matt Rudge](https://github.com/lechien73): For figuring out that the bind method and "this" keyword need to be used to pass in arguments to function after an event listnered in weather-api.js on line 3 & 4
+- [Matt Rudge](https://github.com/lechien73): For figuring out that the bind method and "this" keyword need to be used to pass in arguments to function after an event listener in weather-api.js on line 3 & 4
 ```    
 document.getElementById("searchButton").addEventListener("click", searchFunction.bind(this, "https://api.openweathermap.org/data/2.5/weather?q=", currentWeatherResults));
 document.getElementById("searchButton").addEventListener("click", searchFunction.bind(this, "https://api.openweathermap.org/data/2.5/forecast?q=", forecastResults));
