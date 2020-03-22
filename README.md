@@ -69,13 +69,20 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 
 ## Features
 
+### Current Pages & Features
+
+**1. Home Page**
+
+The site is made up of 1 page in order to keep it as simple as possible and to maintain the organisation goal of ensuring the site is as simple as possible 
+to be as user friendly as possible. 
+
 ### To Do List
 - ~~Add auto-scroll when search button is pressed with valid input~~ - **Implemented 20/03/20**
 - ~~Add event listener for enter button that triggers search function~~ - **Implemented 20/03/20**
 - ~~Add ::achieve on prev and next class buttons to have effect when pressed~~ - **Implemented 21/03/20**
 - Add footer
 - Add about us information
-- Complete README File and add developers note section
+- ~~Complete README File~~ - **Implemented 22/03/20**
 - ~~Add OG meta titles and descriptions~~ - **Implemented 20/03/20**
 - ~~Look into :placeholder text colour not working on Microsoft Edge~~ - **Implemented & Fixed 21/03/20**
 - ~~Add / Redo comments on all files to ensure files are easy to navigate through and to understand~~ - **Implemented 22/03/20**
@@ -87,12 +94,18 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 - Add gap at bottom to show bottom black line of carousel
 - Add library folder and add external files so not dependent on external sources.
 
-###### Last Updated: 03:20am GMT - 22/03/20 
+###### Last Updated: 11:55am GMT - 22/03/20 
 
 ### Features Left to Implement
 ##### These are features that have not been added at the time of development due to various reasons such as time limitations.
 
-- Feature1
+- Add contact us button that was originally designed in wireframes.
+- Setup and connect Email service such as EmailJS to contact form so that form responses are sent to organisations email.
+- Make the site have a more interactive frontend with JavaScript eg Sections fading in or sliding in as you get to them.
+- Add more content to wesbite such as footer, about us information and fill the weather out a bit more.
+- Add cookies and/or Google Analytics to gather data about users who visit the site in order to maximise the effect of any digital marketing the organisation is doing.
+- Add different smooth scroll function so that it smooth scrolls on all browsers instead of just jumping after search on unsupported browsers.
+- Add more content for features section of README.md
 
 ## Technologies Used
 
@@ -136,9 +149,10 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 ## Testing
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
-- [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
-- [JSHint](https://jshint.com/) - [Results]()
+- [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/w3-html-validator.PNG)
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/w3-cssvalidator.PNG)
+- [JSHint](https://jshint.com/) - [Results](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/js-hint.PNG)
+    - Note undefined variable of sliderInit warning showing as sliderInit function is in carousel.js file and function had to be reinitialised in weather-api.js file to ensure carousel functionality working.
 
 ### Testing User Stories from User Experience (UX) Section
 
