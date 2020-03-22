@@ -135,6 +135,11 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 
 ## Testing
 
+The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+- [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
+- [JSHint](https://jshint.com/) - [Results]()
+
 ### Testing User Stories from User Experience (UX) Section
 
 - #### First Time Visitor Goals
@@ -212,15 +217,17 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
     - After looking into the issue I noticed the console was not recognising the += in ```output +=``` as valid syntax. Unfortunately due to time limitations I could not find a fix for 
     this issue and has been added to the known bugs section. I also asked my fellow peers, some of whom were also having the same issue.
 
-- ```justify-content: space-evenly;``` does not work on 
+- ```justify-content: space-evenly;``` does not work on Microsoft Edge or Internet explorer
+    - After looking into the issue I checked [caniuse.com]() to find that the css property is not supported on either browsers. The issue was not big so I decided not to make any 
+    changes as all that was affected was that the search button and search bar had no space between them and were connected on both browsers.
 
 ### Known Bugs
 - Search functionality not working on internet explorer. Description in Further Testing section above.
-- Scroll function after search only scrolls to haflway down to the div on the original search after page is first loaded. 
+- Scroll function after search only scrolls to halfway down to the div on the original search after page is first loaded. 
     - Function was working correctly originally but something was done that made it stop working, due to time limitations the reason behind the issue could not be found or corrected.
 - API is an American API so by default Dublin returns Dublin US, to find Dublin Ireland, "Dublin IE" must be searched. 
-    - The API is very picky when it comes to the search functionality. I have tried my best to limit issues by remvoing spaces in searches and replacing with commas so that the API
-    recognizes the search but the API still has a few bugs with search locations, would change API in the future.
+    - The API is very picky when it comes to the search functionality. I have tried my best to limit issues by removing spaces in searches and replacing with commas so that the API
+    recognizes the search but the API still has a few bugs with search locations, I would change API in the future.
 
 ## Deployment
 
