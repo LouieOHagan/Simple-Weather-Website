@@ -144,6 +144,12 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 ### Code
 - [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System. 
 
+- [Matt Rudge](https://github.com/lechien73): For figuring out that the bind method and "this" keyword need to be used to pass in arguments to function after an event listnered in weather-api.js on line 3 & 4
+```    
+document.getElementById("searchButton").addEventListener("click", searchFunction.bind(this, "https://api.openweathermap.org/data/2.5/weather?q=", currentWeatherResults));
+document.getElementById("searchButton").addEventListener("click", searchFunction.bind(this, "https://api.openweathermap.org/data/2.5/forecast?q=", forecastResults));
+```
+
 ### Content
 
 ### Media
