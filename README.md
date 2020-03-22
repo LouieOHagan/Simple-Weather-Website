@@ -13,8 +13,20 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 ## User Experience (UX)
 
 - ### User stories
-    
+
+    - #### User Goals
+        1. As a Visitor, I want to greeted with an easily navigable website that makes finding the simple information I am looking for a seamless task.
+        2. As a Visitor, I want to easily be able to find a search bar to input the location I want the weather forecast for.
+        3. As a Visitor, I want to easily be able to find the current weather forecast for the location that I inputted in to the search bar.
+        4. As a Visitor, I want to easily be able to find the weather forecast for the coming days for the location that I inputted in to the search bar.
+
 - ### Design
+    - #### Colour Scheme
+
+    - #### Typography
+
+    - #### Imagery
+
     
 * ### Wireframes
     * Home Page - Desktop Wireframe - [View](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/wireframes/Home%20-%20Desktop.png)   
@@ -38,12 +50,13 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 - Complete README File and add developers note section
 - ~~Add OG meta titles and descriptions~~ - **Implemented 20/03/20**
 - ~~Look into :placeholder text colour not working on Microsoft Edge~~ - **Implemented & Fixed 21/03/20**
-- Add / Redo comments on all files to ensure files are easy to navigate through and to understand
+- ~~Add / Redo comments on all files to ensure files are easy to navigate through and to understand~~ - **Implemented 22/03/20**
 - ~~Seperate ifError code in to functions and also seperate function for removing error to clean up search function~~ - **Implemented 21/03/20**
 - ~~Look in to issue on Safari browser of times not showing up and showing Undefinded Nan:00~~ - **Implemented & Fixed 21/03/20**
 - Add help section or popup to better explain search system and format
+- Convert all units from px to rem in css
 
-###### Last Updated: 7:19pm GMT - 21/03/20 
+###### Last Updated: 12:45am GMT - 22/03/20 
 
 ### Features Left to Implement
 ##### These are features that have not been added at the time of development due to various reasons such as time limitations.
