@@ -83,6 +83,7 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 - ~~Look in to issue on Safari browser of times not showing up and showing Undefinded Nan:00~~ - **Implemented & Fixed 21/03/20**
 - Add help section or popup to better explain search system and format
 - ~~Convert all units from px to rem in css~~ - **Implemented 22/03/20**
+- Add titles to easily distinguish what each card and carousel are for, better UX.
 
 ###### Last Updated: 02:40am GMT - 22/03/20 
 
@@ -133,6 +134,37 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 ## Testing
 
 ### Testing User Stories from User Experience (UX) Section
+
+- #### First Time Visitor Goals
+    1. As a Visitor, I want to greeted with an easily navigable website that makes finding the simple information I am looking for a seamless task.
+        1. Upon successful loading of the website the user is greeted with the lannding page.
+        1. To make the process as simple and easy as possible, the user cannot scroll down or navigate anywhere and can easily get information by inputting a location in to the search bar.
+        1. Demonstration GIF can be found [Here]() 
+        1. Pictures can be found [Here]()
+
+    2. As a Visitor, I want to easily be able to find a search bar to input the location I want the weather forecast for.
+        1. Upon successful loading of the website the user is greeted with the lannding page.
+        1. The landing page is clean and simply laid out, towards the bottom of the screen in the very center the user can easily identify the search bar with placeholder text "Enter Location Name".
+        1. Demonstration GIF can be found [Here]()
+        1. Pictures can be found [Here]()
+
+    3. As a Visitor, I want to easily be able to find the current weather forecast for the location that I inputted in to the search bar.
+        1. Upon successful loading of the website the user is greeted with the lannding page.
+        1. The landing page is clean and simply laid out, towards the bottom of the screen in the very center the user can easily identify the search bar with placeholder text "Enter Location Name".
+        1. After typing a location name in to the search box the user can click the search button to search. Alternatively, most experienced computers users will click the "Enter" key after typing which will also submit there search request.
+        1. After the button has been pressed or "Enter" Key has been pressed, the page will automatically scroll down to the weather data for the users searched location.
+        1. The current weather forecast and other simple data can be seen in the big card in the center of the screen.
+        1. Demonstration GIF can be found [Here]()
+        1. Pictures can be found [Here]()
+
+    4. As a Visitor, I want to easily be able to find the weather forecast for the coming days for the location that I inputted in to the search bar
+        1. Upon successful loading of the website the user is greeted with the lannding page.
+        1. The landing page is clean and simply laid out, towards the bottom of the screen in the very center the user can easily identify the search bar with placeholder text "Enter Location Name".
+        1. After typing a location name in to the search box the user can click the search button to search. Alternatively, most experienced computers users will click the "Enter" key after typing which will also submit there search request.
+        1. After the button has been pressed or "Enter" Key has been pressed, the page will automatically scroll down to the weather data for the users searched location.
+        1. The weather forecast for the coming days for the location that the user inputted can be seen in a carousel below the current weather card.
+        1. Demonstration GIF can be found [Here]()
+        1. Pictures can be found [Here]()
 
 ### Further Testing
 
