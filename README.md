@@ -22,11 +22,39 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 
 - ### Design
     - #### Colour Scheme
+        - The 2 colours I chose for the project was #bc7860 (A slightly desaturated orange) & #60a3bc (A slightly desaturated blue). From the beginning of the design process,
+        the goal was to make the website design as simplistic as possible but the design had to be warm and welcoming to the user so they are instantly attracted to the site add
+        there mind is relaxed and feels secure to ensure the best user experience. When the user loads on the page, 85% of the page height is taken up by the image that contains 
+        the words "Weather Made Simple" so it was essential that the image instantly ticked off the design criteria and that the colour scheme and imagery matched and/or complimented
+        one another. The Psychological effects that colours can have was a big part of deciding what colours to go with.
+            - [#bc7860](https://www.color-hex.com/color/00a8ec) (Slightly desaturated orange): "Since it is a combination of red and yellow, orange is stimulating and reaction to 
+            it is a combination of the physical and the emotional. It focuses our minds on issues of physical comfort - food, warmth, shelter etc. - and sensuality. It is a 'fun' 
+            colour."
+            - [#60a3bc](https://www.color-hex.com/color/00a8ec) (Slightly desaturated blue): "Blue is the colour of the mind and is essentially soothing; it affects us mentally, 
+            rather than the physical reaction we have to red. Strong blues will stimulate clear thought and lighter, soft blues will calm the mind and aid concentration. Consequently 
+            it is serene and mentally calming. It is the colour of clear communication."
+        - [Sessions EDU](https://www.sessions.edu/color-calculator/): After determing that #bc7860 would be the primary colour after extracting it from the image used, Sessions EDU
+        was used to find the best colour that complimented #bc7860, which in this case was #60a3bc. Sessions EDU was also used to determine what colour was monochromatic to #60a3bc
+        so that it could be used on any elements such as buttons when a user hovered over them, which in this case was #3284a2 (a dark moderate blue.).
+            - #bc7860 Complimentary colour - [Here](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/Colour-Scheme-Complimentary.png)
+            - $60a3bc Monochromatic colour - [Here](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/Blue-Monochromatic-Colour.png)
 
     - #### Typography
-
+        - The Raleway font is the primary font used throughout the whole website with Sans Serif as the backup font in case for any reason the font isn't being imported into the 
+        site correctly. A lot of research went in to finding the correct font as in order to maintain the simplistic look, a very simple and light font needed to be used. The 
+        font was imported in to the style.css from Google Fonts who make it very easy to to import fonts and are a very reliable external source. The Raleway font offers 9 font
+        weight styles, each of which come with an italic alternative. These styles range from a font weight off 100 (Thin) to 900 (Black) however the only font weight used on the
+        website was the font weight of 300 & 400. The font weight of 200 was also used on photoshop to create the simple effect and to differentiate the text "Simple" in the hero image
+        text "Weather Made Simple" 
+        - The Cambria was also used for the errors that showed up below the text input box in the search area with Sans Serif as the backup font in case of any issues. This font was 
+        used for the errors instead of the Raleway as I felt that it stuck out a bit more and gave a bit more of an aggressive look which best suited the use.
+        
     - #### Imagery
-
+        - Imagery was a massive factor when it came to design, it always is but was especially important for this project. When the user loads on the page, 85% of the page height is 
+        taken up by the image that contains the words "Weather Made Simple" so it was essential that the image instantly ticked off the design criteria, drew in the user and that 
+        the colour scheme and imagery matched and/or complimented one another. The image used was chosen as it was a great mix of warm and welcoming colours, the white texted
+        worked really well on top of it and the colour was a unique orange that made for a great colour scheme. The weather icon images were also a big focus throughout the project 
+        and a lot of time went in to making them simplistic but effective. 
     
 * ### Wireframes
     * Home Page - Desktop Wireframe - [View](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/wireframes/Home%20-%20Desktop.png)   
