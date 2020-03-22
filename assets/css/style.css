@@ -64,7 +64,7 @@
 .search-bar:focus {
     border:  0.1rem solid #32bbec;
     /* Box Shadow values from Bootstrap */
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 0.0625rem 0.0625rem rgba(0,0,0,.075), 0 0 0.5rem rgba(102,175,233,.6);
 }
 
 /* Placeholder Text psudo class section 
@@ -125,24 +125,24 @@
 
 .ifErrorBorder {
     border: 0.1rem solid red;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 0, 0, 0.6);
+    box-shadow: inset 0 0.0625rem 0.0625rem rgba(0,0,0,.075), 0 0 0.5rem rgba(255, 0, 0, 0.6);
 }
 
 /* --------------------------Home Page - Current Weather Card */
 
 .main-section{
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .currentWeatherCard{
     margin: 0 auto;
     height: 39rem;
     background: #f5f5f5;
-    border: 1px solid rgba(133, 133, 133, 0.329);
-    border-radius: 30px;
+    border: 0.0625rem solid rgba(133, 133, 133, 0.329);
+    border-radius: 1.875rem;
     width: 80rem;
     margin-top: 0.5rem;
-    box-shadow: 1.5px 1.5px 4px 1px rgba(133, 133, 133, 0.486);
+    box-shadow: 0.09375rem 0.09375rem 0.25rem 0.0625rem rgba(133, 133, 133, 0.486);
 }
 
 .currentWeatherCard .col{
@@ -156,9 +156,9 @@
 
 .location h2{
     color: black;
-    font-size: 65px;
+    font-size: 4.0625rem;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.25‬rem;
     font-weight: 300;
 }
 
@@ -181,19 +181,19 @@
 
 .currentWeatherCard i {
     display: block;
-    font-size: 40px;
+    font-size: 2.5rem;
     color: black;
-    padding: 10px 0;
+    padding: 0.625rem 0;
 }
 
 .currentWeatherCard img{
-    height: 60px;
+    height: 3.75rem;
     display: block;
     margin: auto;
 }
 
 .currentWeatherCard span{
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .weatherMain img{
@@ -212,7 +212,7 @@
 .currentWeatherCard hr{
     width: 25rem;
     margin: auto;
-    border-top: 4px solid black;
+    border-top: 0.25rem solid black;
     border-radius: 50%;
 }
 
@@ -246,33 +246,33 @@
 
 .forecast-carousel .prev:active,
 .forecast-carousel .next:active {
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
+    text-shadow: 0.125rem 0.125rem 0.9375rem rgba(0, 0, 0, 1);
     border-radius: 50%;
 }
 
 .forecast-carousel .carousel-wrapper {
     width: 80%;
-    height: 375px;
+    height: 23.4375rem;
     margin: 0 auto;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    padding: 10px 0;
+    border-top: 0.0625rem solid black;
+    border-bottom: 0.0625rem solid black;
+    padding: 0.625rem 0;
     overflow: hidden;
 }
 
 .forecast-carousel .carousel-wrapper .forecast-item {
     display: inline-block;
-    width: 300px;
-    margin: 0px 10px;
-    height: 350px;
+    width: 18.75rem;
+    margin: 0 0.625rem;
+    height: 21.875rem;
     background: #f5f5f5;
-    border-radius: 30px;
-    border: 1px solid rgba(133, 133, 133, 0.329);
-    box-shadow: 1.5px 1.5px 4px 1px rgba(133, 133, 133, 0.486);
+    border-radius: 1.25rem;
+    border: 0.0625rem solid rgba(133, 133, 133, 0.329);
+    box-shadow: 0.09375rem 0.09375rem 0.25rem 0.0625rem rgba(133, 133, 133, 0.486);
 }
 
 .forecast-item img {
-    width: 85px;
+    width: 5.3125rem;
     margin: auto;
     display: block;
 }
@@ -283,13 +283,13 @@
 }
 
 .forecast-item p img {
-    width: 33px;
+    width: 2.0625rem;
     display: inline-block;
 }
 
 .forecast-item h3 {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0.625rem;
     font-weight: 300;
 }
 
@@ -332,7 +332,7 @@
     /* --- Home Page - Current Weather Card */
 
     .location h2 {
-        font-size: 50px;
+        font-size: 3.125rem;
     }
 
     .currentWeatherCard hr {
@@ -367,7 +367,7 @@
     .search-bar {
         width: 80%;
         padding: 0.625rem 1.25rem;
-        padding-left: 10px;
+        padding-left: 0.625rem;
     }
 
     .search-area {
@@ -389,7 +389,7 @@
     }
 
     .location h2 {
-        font-size: 35px;
+        font-size: 2.1875rem;
     }
 
     .weatherMain h2 {
@@ -397,16 +397,16 @@
     }
 
     .currentWeatherCard img {
-        height: 50px;
+        height: 3.125rem;
     }
 
     .weatherForecasts h2, 
     .sunTimes h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
     }
 
     .currentWeatherCard span {
-        font-size: 17px;
+        font-size: 1.0625rem;
     }
 
     .weatherMain img {
@@ -425,7 +425,7 @@
     /* --- Search bar errors */
     .emptyTextError {
         padding: 0 0 0 0.5rem;
-        font-size: 14px;
+        font-size: 0.875‬rem;
     }
 }
 
@@ -439,9 +439,9 @@
 
     .search-bar {
         width: 80%;
-        padding-left: 5px;
-        padding-right: 0px;
-        font-size: 13px;
+        padding-left: 0.3125rem;
+        padding-right: 0;
+        font-size: 0.8125rem;
     }
 
     .search-btn {
@@ -451,7 +451,7 @@
     /* --- Search bar errors classes */
     .emptyTextError {
         padding: 0.15rem 0;
-        font-size: 12px;
+        font-size: 0.75rem;
     }
 
     /* --- Home Page - Main Section */
@@ -468,7 +468,7 @@
     }
 
     .location h2 {
-        font-size: 30px;
+        font-size: 1.25‬rem;
     }
 
     /* --- Home Page - Carousel */

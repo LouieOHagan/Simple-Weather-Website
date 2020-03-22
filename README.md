@@ -82,9 +82,9 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 - ~~Seperate ifError code in to functions and also seperate function for removing error to clean up search function~~ - **Implemented 21/03/20**
 - ~~Look in to issue on Safari browser of times not showing up and showing Undefinded Nan:00~~ - **Implemented & Fixed 21/03/20**
 - Add help section or popup to better explain search system and format
-- Convert all units from px to rem in css
+- ~~Convert all units from px to rem in css~~ - **Implemented 22/03/20**
 
-###### Last Updated: 12:45am GMT - 22/03/20 
+###### Last Updated: 02:40am GMT - 22/03/20 
 
 ### Features Left to Implement
 ##### These are features that have not been added at the time of development due to various reasons such as time limitations.
@@ -192,6 +192,7 @@ document.getElementById("searchButton").addEventListener("click", searchFunction
 ```
 
 ### Content
+- Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
 
 ### Media
 - [Pixabay](https://pixabay.com/): The landing page image of the mountains and sky was obtained from Pixabay.
