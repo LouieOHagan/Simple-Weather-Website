@@ -84,8 +84,10 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
 - Add help section or popup to better explain search system and format
 - ~~Convert all units from px to rem in css~~ - **Implemented 22/03/20**
 - Add titles to easily distinguish what each card and carousel are for, better UX.
+- Add gap at bottom to show bottom black line of carousel
+- Add library folder and add external files so not dependent on external sources.
 
-###### Last Updated: 02:40am GMT - 22/03/20 
+###### Last Updated: 03:20am GMT - 22/03/20 
 
 ### Features Left to Implement
 ##### These are features that have not been added at the time of development due to various reasons such as time limitations.
@@ -139,14 +141,14 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
     1. As a Visitor, I want to greeted with an easily navigable website that makes finding the simple information I am looking for a seamless task.
         1. Upon successful loading of the website the user is greeted with the lannding page.
         1. To make the process as simple and easy as possible, the user cannot scroll down or navigate anywhere and can easily get information by inputting a location in to the search bar.
-        1. Demonstration GIF can be found [Here]() 
-        1. Pictures can be found [Here]()
+        1. Demonstration GIF can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20GIF%201.gif) 
+        1. Pictures can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20Picture%201%20%26%202.png)
 
     2. As a Visitor, I want to easily be able to find a search bar to input the location I want the weather forecast for.
         1. Upon successful loading of the website the user is greeted with the lannding page.
         1. The landing page is clean and simply laid out, towards the bottom of the screen in the very center the user can easily identify the search bar with placeholder text "Enter Location Name".
-        1. Demonstration GIF can be found [Here]()
-        1. Pictures can be found [Here]()
+        1. Demonstration GIF can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20GIF%202.gif)
+        1. Pictures can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20Picture%201%20%26%202.png)
 
     3. As a Visitor, I want to easily be able to find the current weather forecast for the location that I inputted in to the search bar.
         1. Upon successful loading of the website the user is greeted with the lannding page.
@@ -154,8 +156,8 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
         1. After typing a location name in to the search box the user can click the search button to search. Alternatively, most experienced computers users will click the "Enter" key after typing which will also submit there search request.
         1. After the button has been pressed or "Enter" Key has been pressed, the page will automatically scroll down to the weather data for the users searched location.
         1. The current weather forecast and other simple data can be seen in the big card in the center of the screen.
-        1. Demonstration GIF can be found [Here]()
-        1. Pictures can be found [Here]()
+        1. Demonstration GIF can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20GIF%203.gif)
+        1. Pictures can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20Picture%203.png)
 
     4. As a Visitor, I want to easily be able to find the weather forecast for the coming days for the location that I inputted in to the search bar
         1. Upon successful loading of the website the user is greeted with the lannding page.
@@ -163,10 +165,36 @@ The website has 1 main page. Upon entering the site, the user is greeted with a 
         1. After typing a location name in to the search box the user can click the search button to search. Alternatively, most experienced computers users will click the "Enter" key after typing which will also submit there search request.
         1. After the button has been pressed or "Enter" Key has been pressed, the page will automatically scroll down to the weather data for the users searched location.
         1. The weather forecast for the coming days for the location that the user inputted can be seen in a carousel below the current weather card.
-        1. Demonstration GIF can be found [Here]()
-        1. Pictures can be found [Here]()
+        1. Demonstration GIF can be found [Here](https://github.com/LouieOHagan/Simple-Weather-Website/blob/master/readMe-assets/User%20Story%20Testing/User%20Story%20GIF%204.gif)
+        1. Pictures can be found [Here](https://raw.githubusercontent.com/LouieOHagan/Simple-Weather-Website/master/readMe-assets/User%20Story%20Testing/User%20Story%20Picture%204.png)
 
 ### Further Testing
+- The website was tested across a wide range of devices and browsers to ensure its fully responsive and compatible for all users.
+    - Devices: The website was tested on Desktop, HP Envy Laptop, iPhone7, iPhone8, iPhoneX & Chrome Developer tools was also used to test the screen sizes of 33 devices. Full list of 33 devices can be found [Here]()
+    - Browsers: The website was tested on Chrome, Microsoft Edge, Safari, Firefox and Internet Explorer.
+
+- {behavior: "smooth"} in scrollIntoView function on line 56 of weather-api.js not working on many browsers.
+    - After research and continuous testing I discovered that this property is not supported on many browsers, Table of compatability found [Here]() from MDN Web Docs 
+    (Note: any browser with astericks on scrollIntoView line does NOT support property, any browser with "No" on scrollIntoViewOptions does NOT support property).
+
+- Previous and Next carousel arrows hidden behind carousel in iPad view (768px in width), disrupting functionality of carousel.
+    - After looking in to the issue, bootstrap md class only changed after 767px where as my media query was changing the location of the arrows at 768px, hence the arrows hidden behind
+    the carousel cards. Decision was made to make new media query on line 347 of style.css that made arrow changes at 767px to ensure optimal website functionality for iPad users.
+
+- Placeholder text colour inside of the search input box was not changing to white on Microsoft Edge.
+    - After looking in to the issue I discovered that the placeholder pseudo class was not supported on Microsoft Edge by default and instead required :-ms=input-placeholder pseduo class.
+        - Single colon syntax required for Internet Explorer - :-ms=input-placeholder
+        - Double colon syntax required for Microsoft Edge - ::-ms=input-placeholder
+
+- Active pseduo class content not working on Microsoft Edge 
+    - After looking in to the issue I discovered that Microsoft Edge was not supporting any colours that had a lower opacity than 1 and if a colour had a lower opacity the colour didnt 
+    show at all. To fix the issue I just changed the drop shadow opacity from 0.8 to 1 as after testing I noticed it did not make a noticable difference.
+
+- Search Area background colour was not showing on Microsoft Edge when value was #bc7860f7
+    - After looking in to the issue I discovered that Microsoft Edge was not supporting any colours that had a lower opacity than 1 and if a colour had a lower opacity the colour didnt 
+    show at all. To fix the issue I removed the "f7" at the end of the colour code as I was satisfied with colour even with out the lowered opcaity.
+
+- Times not working on 
 
 ### Known Bugs
 
